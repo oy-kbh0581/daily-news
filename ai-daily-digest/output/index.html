@@ -31,6 +31,13 @@
   .spotlight h3 { display: inline; font-size: 1.05rem; color: #f1f5f9; }
   .spotlight p { color: var(--muted); font-size: .92rem; margin-top: .5rem; }
   footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+  .archive { margin-bottom: 2rem; }
+  .archive summary { color: var(--muted); font-size: .9rem; cursor: pointer; padding: .5rem 0; }
+  .archive summary:hover { color: var(--accent); }
+  .archive-list { display: flex; flex-wrap: wrap; gap: .4rem; padding-top: .6rem; }
+  .archive-list a { background: var(--surface); color: var(--muted); text-decoration: none; padding: .3rem .7rem; border-radius: 8px; font-size: .8rem; border: 1px solid var(--border); transition: all .2s; }
+  .archive-list a:hover { color: var(--accent); border-color: var(--accent); }
+  .archive-list a.current { color: var(--accent); border-color: var(--accent); pointer-events: none; }
 </style>
 </head>
 <body>
@@ -46,6 +53,15 @@
   <a href="#security">🔒 보안</a>
   <a href="#kr">🇰🇷 국내</a>
 </nav>
+
+<details class="archive" open>
+  <summary>📅 지난호 보기</summary>
+  <div class="archive-list">
+    <a class="current" href="ai-daily-digest-2026-03-26.html">3/26 (목)</a>
+    <a href="ai-daily-digest-2026-03-25.html">3/25 (화)</a>
+    <a href="ai-daily-digest-2026-03-24.html">3/24 (월)</a>
+  </div>
+</details>
 
 <!-- ===================== 주요 기술 발전 ===================== -->
 <h2 class="section-title" id="tech">🔬 주요 기술 발전</h2>
