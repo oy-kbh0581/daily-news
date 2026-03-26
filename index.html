@@ -26,6 +26,8 @@
   .badge-new { background: #38bdf820; color: #38bdf8; }
   .highlight-box { border-left: 4px solid var(--accent); background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; margin: .8rem 0 1rem; font-size: .88rem; }
   .highlight-box strong { color: var(--accent); }
+  .highlight-box-pm { border-left: 4px solid #a78bfa; background: linear-gradient(135deg, #1e1b4b20 0%, #0f172a 100%); border-radius: 0 12px 12px 0; padding: 1rem 1.2rem; margin: .8rem 0 1rem; font-size: .88rem; }
+  .highlight-box-pm strong { color: #a78bfa; }
   .spotlight { border: 1px solid #a78bfa; border-radius: 12px; padding: 1.2rem 1.4rem; margin-bottom: 1rem; background: linear-gradient(135deg, #1e1b4b20 0%, #1e293b 100%); }
   .spotlight .num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: #a78bfa; color: #0f172a; font-weight: 700; font-size: .85rem; margin-right: .6rem; }
   .spotlight h3 { display: inline; font-size: 1.05rem; color: #f1f5f9; }
@@ -70,12 +72,14 @@
   <h3>Arm, 최초 자체 칩 'AGI CPU' 공개 — Meta가 첫 고객 <span class="badge badge-new">NEW</span></h3>
   <p>Arm이 35년 역사상 처음으로 자체 실리콘을 출시했습니다. TSMC 3nm 공정 기반 최대 136코어 데이터센터 프로세서로, x86 대비 와트당 2배 성능을 제공합니다. Meta가 첫 고객이며 OpenAI, Cloudflare, SAP 등 7개사가 추가 확정되었습니다. 단일 에어쿨링 랙에 64개 CPU(약 8,700코어)를 수용할 수 있습니다.</p>
   <div class="highlight-box">💡 <strong>백엔드 개발자 포인트</strong> — ARM 아키텍처 기반 서버가 데이터센터 주류로 진입하고 있습니다. AWS Graviton과 함께 ARM 기반 ECS Fargate 워크로드 최적화를 검토해볼 시점입니다.</div>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — AI 추론 인프라 비용이 구조적으로 하락하는 신호입니다. 와트당 2배 성능은 곧 클라우드 AI 서비스 단가 인하로 이어질 수 있으며, AI 기능 도입 시 ROI 산정에 반영할 포인트입니다.</div>
   <a class="source" href="https://www.cnbc.com/2026/03/24/arm-launches-its-own-cpu-with-meta-as-first-customer.html" target="_blank">CNBC →</a>
 </div>
 
 <div class="card">
   <h3>OpenAI, Sora 앱 종료 및 Disney $1B 투자 무산 <span class="badge badge-new">NEW</span></h3>
   <p>OpenAI가 출시 6개월 만에 AI 비디오 앱 Sora를 폐쇄한다고 발표했습니다. 이에 따라 Disney의 $10억 규모 투자 계획도 무산되었습니다. 막대한 컴퓨팅 자원 소모 대비 수익화 모델이 불분명했으며, OpenAI는 AGI 연구와 IPO 준비에 리소스를 집중할 방침입니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — AI 비디오 생성 기능을 로드맵에 넣고 있다면 재검토가 필요합니다. OpenAI조차 수익화에 실패한 영역입니다. 콘텐츠 자동 생성은 텍스트·이미지 중심으로 우선순위를 두고, 비디오는 '탐색' 단계로 유지하는 것이 안전합니다.</div>
   <a class="source" href="https://www.hollywoodreporter.com/business/digital/openai-shutting-down-sora-ai-video-app-1236546187/" target="_blank">The Hollywood Reporter →</a>
 </div>
 
@@ -97,18 +101,21 @@
 <div class="card">
   <h3>Harvey AI, $200M 유치로 기업가치 $11B 돌파 <span class="badge badge-new">NEW</span></h3>
   <p>법률 AI 스타트업 Harvey가 GIC·Sequoia 주도로 $2억을 추가 유치하며 기업가치 $110억을 달성했습니다. 지난 12월 $80억에서 3개월 만에 37.5% 상승. 25,000개 이상의 커스텀 에이전트가 M&A, 실사, 계약 초안, 문서 리뷰에 활용되고 있습니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — 법률처럼 전문 지식이 필요한 도메인에서 AI 에이전트가 $11B 가치를 인정받았습니다. 물류/WMS 도메인도 복잡한 규칙·예외처리가 많아 버티컬 AI 에이전트의 유망 후보입니다. "25,000개 커스텀 에이전트" 모델은 고객별 맞춤 에이전트 전략의 레퍼런스가 됩니다.</div>
   <a class="source" href="https://techcrunch.com/2026/03/25/harvey-confirms-11b-valuation-sequoia-triples-down/" target="_blank">TechCrunch →</a>
 </div>
 
 <div class="card">
   <h3>Alibaba, 엔터프라이즈 AI 에이전트 플랫폼 'Wukong' 발표</h3>
   <p>Alibaba가 기업용 AI 에이전트 관리 플랫폼 Wukong을 공개했습니다. 문서 편집, 결재, 회의 기록, 리서치 등 복합 업무를 여러 에이전트가 협업 처리합니다. DingTalk(2,000만+ 기업 사용자) 네이티브 지원 후 Slack, Teams, WeChat 연동을 예정하고 있습니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — "멀티 에이전트 협업"이 엔터프라이즈 제품의 새 패러다임이 되고 있습니다. 물류 현장에서도 피킹·출하·재고 에이전트가 각각 역할을 맡고 협업하는 구조를 구상해볼 수 있습니다. 메시징 플랫폼(Slack, Teams) 연동은 현장 운영자 접점으로 참고할 만합니다.</div>
   <a class="source" href="https://www.cnbc.com/2026/03/17/alibaba-wukong-ai-enterprise-tool-restructuring-qwen-exits.html" target="_blank">CNBC →</a>
 </div>
 
 <div class="card">
   <h3>Apple, Gemini 기반 새 Siri iOS 26.4와 함께 출시</h3>
   <p>Apple이 Google의 Gemini AI 모델(1.2T 파라미터)을 Apple Private Cloud Compute에서 구동하는 완전히 새로운 Siri를 출시합니다. 화면 인식(on-screen awareness)과 크로스 앱 통합이 핵심으로, 프라이버시를 유지하면서 성능을 대폭 강화합니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — "화면 인식 + 크로스 앱 통합"이 모바일 AI UX의 새 기준이 됩니다. WMS 모바일 앱에서도 현장 사진을 찍으면 AI가 상품·재고 상태를 자동 인식하는 등, on-screen awareness를 물류 현장 UX에 접목할 아이디어를 검토해보세요.</div>
   <a class="source" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">Crescendo AI →</a>
 </div>
 
@@ -153,6 +160,7 @@
 <div class="card">
   <h3>트럼프 행정부, 국가 AI 입법 프레임워크 공개 <span class="badge badge-new">NEW</span></h3>
   <p>백악관이 국가 AI 입법 프레임워크를 공개했습니다. 주(州)별 AI 규제 권한을 제한하고 연방 차원의 통합 정책을 목표로 합니다. 올해 안에 법제화하겠다는 방침이며, 초당적 지지를 확보할 수 있다고 밝혔습니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — 미국 시장 진출 시 AI 규제가 주(州)별이 아닌 연방 단일 기준으로 통합될 전망입니다. AI 기능 출시 시 컴플라이언스 검토가 단순해질 수 있지만, 법제화 전까지는 양쪽 모두 대비가 필요합니다.</div>
   <a class="source" href="https://www.whitehouse.gov/articles/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/" target="_blank">The White House →</a>
 </div>
 
@@ -165,6 +173,7 @@
 <div class="card">
   <h3>워싱턴주, AI 공개·챗봇 안전 법안 2건 통과</h3>
   <p>워싱턴주가 AI 공개 의무(disclosure)와 챗봇 안전(chatbot safety)에 관한 2개 법안을 통과시켰습니다. AI 시스템 사용 시 이를 사용자에게 명시적으로 고지해야 하며, 챗봇의 유해 콘텐츠 생성을 제한하는 내용을 담고 있습니다.</p>
+  <div class="highlight-box-pm">📊 <strong>기획자 포인트</strong> — AI 기능에 "이 응답은 AI가 생성했습니다" 고지를 넣는 것이 글로벌 트렌드입니다. 고객 대면 AI 챗봇이나 자동 응답 기능을 기획할 때, AI 공개 라벨과 안전 가드레일을 UX에 초기부터 반영하세요.</div>
   <a class="source" href="https://buildez.ai/blog/ai-trending-march-2026-developments" target="_blank">BuildEZ →</a>
 </div>
 
