@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Daily Digest — 2026-03-30</title>
+<title>AI Daily Digest — 2026-03-31</title>
 <style>
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
@@ -218,7 +218,7 @@
   <div class="header-inner">
     <h1>AI Daily Digest</h1>
     <div class="subtitle">오늘의 AI 뉴스를 한눈에</div>
-    <div class="date">2026년 3월 30일 월요일</div>
+    <div class="date">2026년 3월 31일 화요일</div>
   </div>
 </div>
 
@@ -239,7 +239,8 @@
   <summary>📅 지난호 보기</summary>
   <div class="archive-list">
     <a class="weekly" href="ai-daily-digest/output/ai-weekly-recap-2026-w13.html">📊 W13 주간정리</a>
-    <a class="current" href="ai-daily-digest/output/ai-daily-digest-2026-03-30.html">3/30 (월)</a>
+    <a class="current" href="ai-daily-digest/output/ai-daily-digest-2026-03-31.html">3/31 (화)</a>
+    <a href="ai-daily-digest/output/ai-daily-digest-2026-03-30.html">3/30 (월)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-03-27.html">3/27 (금)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-03-26.html">3/26 (목)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-03-25.html">3/25 (화)</a>
@@ -251,158 +252,139 @@
 <h2 class="section-title" id="tech">🔬 주요 기술 발전</h2>
 
 <div class="card">
-  <h3>봇 트래픽이 인간을 공식 추월 — 전체 인터넷 트래픽의 51% <span class="badge badge-new">NEW</span></h3>
-  <p>HUMAN Security의 'State of AI Traffic' 보고서에 따르면 자동화 트래픽이 전체 인터넷 트래픽의 51%를 차지하며 인간 사용자를 공식적으로 추월했습니다. AI 에이전트 트래픽은 전년 대비 8,000% 폭증했으며, 자동화 트래픽 증가 속도는 인간 트래픽의 8배입니다. Cloudflare CEO는 2027년까지 AI 봇이 인간보다 훨씬 많아질 것으로 전망했습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — API 설계 시 봇 트래픽 대응이 필수가 되었습니다. Rate limiting, 봇 탐지(fingerprinting), API 키 기반 접근 제어를 기본으로 적용하고, WAF 룰에 AI 크롤러 패턴을 추가하세요. ECS Fargate의 Auto Scaling 정책도 봇 트래픽 급증 시나리오를 반영해야 합니다.</div>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — "Dead Internet" 현상이 현실이 되었습니다. 이커머스/물류 서비스의 트래픽 분석 시 봇 트래픽을 분리하지 않으면 사용자 행동 데이터가 왜곡됩니다. GA4나 분석 도구에서 봇 필터링을 점검하고, AI 에이전트를 통한 주문이 증가할 수 있으므로 API-first 전략을 검토하세요.</div>
-  <a class="source" href="https://www.cnbc.com/2026/03/26/ai-bots-humans-internet.html" target="_blank">CNBC</a>
+  <h3>llm-d, CNCF 샌드박스 프로젝트로 기증 — K8s 네이티브 LLM 추론의 표준화 <span class="badge badge-new">NEW</span></h3>
+  <p>KubeCon Europe 2026에서 IBM Research, Red Hat, Google Cloud가 분산 LLM 추론 프레임워크 llm-d를 CNCF 샌드박스 프로젝트로 기증했습니다. NVIDIA, CoreWeave, AMD, Cisco, Hugging Face, Intel, Mistral AI가 공동 참여합니다. llm-d는 추론을 prefill/decode 단계로 분리하여 별도 Pod에서 실행하는 K8s 네이티브 아키텍처로, 모든 모델·가속기·클라우드에서 작동하는 벤더 중립 추론 청사진을 제공합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — KServe(상위 제어 플레인)와 vLLM(하위 추론 엔진) 사이의 간극을 메우는 프레임워크입니다. EKS에서 LLM 서빙을 직접 운영하는 팀이라면, llm-d로 prefill/decode를 분리해 GPU 활용률을 높이고 레이턴시를 줄일 수 있습니다. K8s HPA 기반 오토스케일링과 자연스럽게 연동됩니다.</div>
+  <a class="source" href="https://thenewstack.io/llm-d-cncf-kubernetes-inference/" target="_blank">The New Stack</a>
 </div>
 
 <div class="card">
-  <h3>3월 AI 모델 러시 — 23일간 4개 주요 모델 연속 출시 <span class="badge badge-hn">HN</span></h3>
-  <p>3월 한 달간 Mistral Small 4(3/3), GPT-5.4(3/17), Gemini 3.1(3/20), Grok 4.20(3/22)이 23일 간격 없이 쏟아졌습니다. GPT-5.4는 105만 토큰 컨텍스트 윈도우와 실무 벤치마크 83% 성공률을 기록했고, Mistral Small 4는 22B로 3~5배 큰 비공개 모델을 능가하며 Apache 2.0으로 공개되었습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Mistral Small 4가 Apache 2.0이면서 대형 모델을 능가하는 성능을 보입니다. 온프레미스나 VPC 내 프라이빗 배포가 필요한 경우(물류 데이터 보안 등) 22B 모델을 자체 호스팅하는 것이 비용 대비 효율적인 선택지가 되었습니다.</div>
-  <a class="source" href="https://www.digitalapplied.com/blog/march-2026-ai-roundup-month-that-changed-everything" target="_blank">Digital Applied</a>
-</div>
-
-<div class="card">
-  <h3>Qwen 3.5 Small — 9B 파라미터로 GPT-OSS-120B 압도</h3>
-  <p>알리바바가 Qwen 3.5 Small 시리즈(0.8B/2B/4B/9B)를 공개했습니다. 네이티브 멀티모달(텍스트·이미지·비디오)을 지원하며, 9B 모델이 GPQA Diamond에서 81.7점을 기록해 120B급 모델(71.5점)을 크게 앞섰습니다. 소형 모델의 효율성이 극적으로 향상되고 있습니다.</p>
-  <a class="source" href="https://llm-stats.com/ai-news" target="_blank">LLM Stats</a>
+  <h3>GPT-5.4, OSWorld-V 벤치마크 인간 수준 초과 — 75% (인간 72.4%)</h3>
+  <p>OpenAI의 GPT-5.4가 실무 업무 벤치마크 OSWorld-V에서 75% 성공률을 기록하며 인간 기준선(72.4%)을 처음으로 초과했습니다. 소프트웨어 환경에서 다단계 워크플로우를 자율 실행할 수 있으며, 사실 오류는 GPT-5.2 대비 33% 감소했습니다. 105만 토큰 컨텍스트 윈도우는 이전 모델 대비 50~100배 확장입니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI가 "지식 업무에서 인간 수준"이라는 벤치마크를 넘었습니다. 고객 문의 처리, 데이터 분석, 보고서 작성 같은 반복적 지식 업무에서 AI 자동화 ROI를 재산정할 시점입니다. 다만 벤치마크와 실무 간 격차가 있으므로, 파일럿 테스트로 실제 효과를 검증하세요.</div>
+  <a class="source" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">Crescendo AI</a>
 </div>
 
 <!-- ===================== 기업/산업 동향 ===================== -->
 <h2 class="section-title" id="biz">🏢 기업/산업 동향</h2>
 
 <div class="card">
-  <h3>Meta, 웨스트텍사스 AI 데이터센터 투자 $100억으로 6배 확대 <span class="badge badge-new">NEW</span></h3>
-  <p>Meta가 텍사스 엘파소 AI 데이터센터 투자를 기존 $15억에서 $100억으로 6배 이상 확대했습니다. 2028년까지 1GW 규모를 목표로 합니다. Meta는 2026년 전체 자본지출을 $1,150~1,350억으로 예고했으며, Microsoft는 연간 $1,450억 페이스로 지출하고 있습니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 빅테크 합산 2026년 AI 인프라 투자가 $6,500억에 달합니다. 이 규모의 투자는 곧 추론 비용 하락과 API 가격 인하로 이어집니다. AI 기능 도입 시 "현재 비용이 비싸서 보류"했던 유스케이스를 6개월 단위로 재평가하세요.</div>
-  <a class="source" href="https://www.cnbc.com/2026/03/26/meta-to-spend-10-billion-on-ai-data-center-in-el-paso-1gw-by-2028.html" target="_blank">CNBC</a>
+  <h3>Mistral AI, $830M 부채 금융 확보 — 파리 근교 Nvidia GB300 데이터센터 구축 <span class="badge badge-new">NEW</span></h3>
+  <p>프랑스 AI 스타트업 Mistral이 BNP Paribas, HSBC 등 7개 은행 컨소시엄으로부터 $8.3억 부채 금융을 확보했습니다. 파리 근교 브뤼에르르샤텔에 Nvidia GB300 GPU 13,800개, 44MW 규모 데이터센터를 2026년 2분기 가동 목표로 구축합니다. 2027년 말까지 유럽 전역 200MW 용량 확보가 목표입니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Mistral이 자체 추론 인프라를 구축하면 API 가격 경쟁력이 한층 강화됩니다. Mistral Small 4(22B, Apache 2.0)를 이미 사용 중이라면, Mistral 호스팅 API로 전환 시 레이턴시와 비용 모두 개선될 수 있습니다. 유럽 GDPR 데이터 주권이 중요한 서비스라면 Mistral의 유럽 데이터센터가 유리합니다.</div>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI 모델 회사들이 직접 데이터센터를 구축하는 수직 통합 추세입니다. 이는 곧 "모델 + 인프라" 번들 요금제로 이어질 수 있으며, AI 서비스 비용 구조가 달라집니다. 벤더 락인 리스크와 가격 우위를 함께 평가하세요.</div>
+  <a class="source" href="https://www.cnbc.com/2026/03/30/mistral-ai-paris-data-center-cluster-debt-financing.html" target="_blank">CNBC</a>
 </div>
 
 <div class="card">
-  <h3>AMI Labs(Yann LeCun) $10.3억 시드 — 유럽 역대 최대, LLM 패러다임에 도전 <span class="badge badge-new">NEW</span></h3>
-  <p>튜링상 수상자 Yann LeCun이 설립한 AMI Labs가 $10.3억 시드 라운드를 유치했습니다. 유럽 역대 최대 시드이자 $35억 밸류에이션. Nvidia, Bezos Expeditions, Samsung, Temasek이 투자했습니다. 자기회귀 텍스트 예측이 아닌 JEPA(Joint Embedding Predictive Architecture) 기반 '월드 모델'을 개발합니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — LLM의 자기회귀 패러다임에 대한 가장 대규모의 대안 투자입니다. JEPA는 "다음 토큰 예측" 대신 "세계 모델 학습"을 지향하며, 물리 세계를 이해하는 AI에 적합합니다. 로보틱스·물류 시뮬레이션 분야에서 주목해야 할 아키텍처입니다.</div>
-  <a class="source" href="https://www.bloomberg.com/news/articles/2026-03-10/yann-lecun-s-new-ai-startup-raises-1-billion-in-seed-funding" target="_blank">Bloomberg</a>
+  <h3>Atlassian, 1,600명(10%) 감원 — AI 전환에 리소스 재배치 <span class="badge badge-new">NEW</span></h3>
+  <p>Atlassian이 전체 직원의 10%인 1,600명을 해고한다고 발표했습니다. 900명 이상이 R&D 부문이며, 북미(40%), 호주(30%), 인도(16%)에 걸쳐 영향을 줍니다. CEO Mike Cannon-Brookes는 "AI가 필요한 스킬 구성을 근본적으로 바꿨다"고 설명했습니다. CTO Rajeev Rajan도 3월 31일부로 퇴임하며 CTO 역할이 2개로 분리됩니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 2026년 3월까지 글로벌 테크 해고가 45,000명을 넘었으며, "AI 전환"이 가장 많이 인용되는 사유입니다. AI가 개발 생산성을 높이면서 필요 인력 규모가 바뀌고 있습니다. 프로덕트 팀 구성 시 AI 도구 활용 역량을 핵심 요건으로 반영하고, AI가 대체하기 어려운 도메인 전문성·고객 이해 역할에 투자하세요.</div>
+  <a class="source" href="https://www.cnbc.com/2026/03/11/atlassian-slashes-10percent-of-workforce-to-self-fund-investments-in-ai.html" target="_blank">CNBC</a>
 </div>
 
 <div class="card">
-  <h3>AI 로봇 스타트업, 한 주에 $12억+ 유치 — 산업·물류·가정용</h3>
-  <p>Mind Robotics($5억), Rhoda AI($4.5억), Sunday($1.65억, 유니콘 달성), Oxa($1.03억)가 한 주 만에 총 $12억 이상을 유치했습니다. 모두 AI 기반 로봇으로 산업·가정·물류 자동화를 목표로 합니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 로봇 AI에 대한 투자가 집중되고 있습니다. 특히 물류 자동화는 핵심 타깃 영역입니다. WMS/풀필먼트 센터에서 피킹·패킹·분류 로봇과의 연동 API를 미리 설계해두면, 로봇 도입 시 통합 비용을 크게 줄일 수 있습니다.</div>
-  <a class="source" href="https://aifundingtracker.com/ai-startup-funding-news-today/" target="_blank">AI Funding Tracker</a>
-</div>
-
-<div class="card">
-  <h3>미국 스타트업 펀딩 3월 급감 — 2월 $1,890억 역대 최고 후 냉각</h3>
-  <p>2월 글로벌 스타트업 펀딩이 $1,890억으로 역대 최대(OpenAI $1,100억 + Anthropic $300억)를 기록한 뒤, 3월 미국 펀딩은 약 $130억으로 급감했습니다. 초대형 딜 이후 시장 조정 국면에 진입한 것으로 분석됩니다.</p>
-  <a class="source" href="https://news.crunchbase.com/business/us-startup-funding-slows-march-2026-data/" target="_blank">Crunchbase</a>
+  <h3>Shield AI, $1.5B Series G — 방위 AI 기업가치 $12.7B</h3>
+  <p>자율 방위 시스템 개발사 Shield AI가 $15억 Series G를 유치하며 기업가치 $127억을 달성했습니다. AI 파일럿 시스템 'Hivemind'를 통해 드론과 전투기의 자율 비행을 구현하며, 미 국방부와 다수 계약을 체결하고 있습니다.</p>
+  <a class="source" href="https://news.crunchbase.com/venture/biggest-funding-rounds-space-tech-sierra-ai-ayar/" target="_blank">Crunchbase</a>
 </div>
 
 <!-- ===================== 개발자 관련 ===================== -->
 <h2 class="section-title" id="dev">🛠️ 개발자</h2>
 
 <div class="card">
-  <h3>OpenAI Codex Security — 1.2M 커밋 스캔, 11,353건 고위험 취약점 발견 <span class="badge badge-new">NEW</span></h3>
-  <p>OpenAI가 출시한 AI 보안 에이전트 Codex Security가 30일간 120만 커밋을 스캔하여 792건 크리티컬, 10,561건 고위험 취약점을 발견했습니다. OpenSSH, GnuTLS, PHP, Chromium 등 주요 오픈소스에서 실제 CVE가 할당되었고, 오탐율은 50% 이상 감소했습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 보안 스캐너가 실제 CVE를 발굴하는 수준에 도달했습니다. CI/CD 파이프라인에 Codex Security 같은 AI 기반 SAST를 추가하면, 기존 정적 분석 도구가 놓치는 로직 레벨 취약점을 잡을 수 있습니다. GitHub Actions에 통합 가능한지 확인해보세요.</div>
-  <a class="source" href="https://thehackernews.com/2026/03/openai-codex-security-scanned-12.html" target="_blank">The Hacker News</a>
+  <h3>AWS Agent Plugin for Serverless — AI 코딩 어시스턴트로 서버리스 앱 관리 <span class="badge badge-new">NEW</span></h3>
+  <p>AWS가 Agent Plugin for Serverless를 발표했습니다. AI 코딩 어시스턴트에서 서버리스 앱의 빌드·배포·디버깅·관리를 수행할 수 있으며, 스킬, 서브 에이전트, MCP 서버를 모듈 단위로 패키징하여 재사용 가능합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Lambda 기반 서버리스 아키텍처를 운영하는 팀에게 생산성 향상 도구입니다. Claude Code나 Cursor 같은 AI 코딩 어시스턴트에서 직접 Lambda 함수를 배포·디버깅할 수 있어, IaC 작성 → 배포 → 로그 확인 사이클이 단축됩니다. SAM + Kiro 통합도 확인해보세요.</div>
+  <a class="source" href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-ai-ml-scholars-program-agent-plugin-for-aws-serverless-and-more-march-30-2026/" target="_blank">AWS Blog</a>
 </div>
 
 <div class="card">
-  <h3>AWS + Cerebras CS-3 — Bedrock 통합으로 "최고속 AI 추론" 제공</h3>
-  <p>AWS가 Cerebras의 웨이퍼 스케일 CS-3 칩을 데이터센터에 배치하고, AWS Trainium 서버 + EFA 네트워킹을 결합하여 Amazon Bedrock을 통해 최고속 AI 추론을 제공합니다. 기존 GPU 기반 대비 레이턴시를 크게 줄일 수 있습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Bedrock 사용 시 Cerebras 기반 추론 엔드포인트를 선택할 수 있게 됩니다. 실시간 응답이 필요한 AI 기능(채팅, 실시간 분류)에서 레이턴시 개선 효과가 클 것으로 예상됩니다. ECS Fargate에서 Bedrock API 호출 시 VPC 엔드포인트를 통한 최적 경로를 확인하세요.</div>
-  <a class="source" href="https://dev.to/devops_descent/aws-in-march-2026-the-biggest-updates-developers-cant-ignore-plf" target="_blank">DEV Community</a>
+  <h3>AWS Polly Bidirectional Streaming API — 대화형 AI 실시간 음성 합성</h3>
+  <p>Amazon Polly에 양방향 스트리밍 API가 추가되었습니다. LLM 응답처럼 텍스트가 점진적으로 생성되는 환경에서, 전체 텍스트를 기다리지 않고 실시간으로 음성을 합성합니다. 대화형 AI 어시스턴트, 콜센터 봇 등에 적합합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Bedrock + Polly Streaming 조합으로 "AI가 말하는" 실시간 음성 응답 시스템을 구현할 수 있습니다. 웹소켓 기반 실시간 통신 아키텍처를 이미 운영 중이라면, Polly 스트리밍을 연동해 음성 기반 UX를 빠르게 프로토타입해보세요.</div>
+  <a class="source" href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-ai-ml-scholars-program-agent-plugin-for-aws-serverless-and-more-march-30-2026/" target="_blank">AWS Blog</a>
 </div>
 
 <div class="card">
-  <h3>OpenAI Responses API 확장 — 셸 도구, 에이전트 루프, 컨텍스트 압축</h3>
-  <p>OpenAI가 Responses API에 에이전트 워크플로우 구축을 위한 주요 기능을 추가했습니다. 셸 도구(코드 실행), 에이전트 실행 루프, 호스팅 컨테이너 워크스페이스, 컨텍스트 압축, 재사용 가능한 에이전트 스킬 등이 포함됩니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — 에이전트 실행 루프와 컨텍스트 압축은 긴 대화 세션에서 토큰 비용을 절감하는 핵심 기능입니다. CQRS 패턴으로 읽기/쓰기 분리한 시스템에서 AI 에이전트가 읽기 모델을 효율적으로 탐색하도록 설계할 때 유용합니다.</div>
-  <a class="source" href="https://llm-stats.com/llm-updates" target="_blank">LLM Stats</a>
+  <h3>AWS AI/ML Scholars 프로그램 — 10만 명 대상 무료 AI 교육</h3>
+  <p>AWS가 2026 AI/ML Scholars 프로그램을 시작했습니다. 전 세계 10만 명에게 무료 AI 교육을 제공하며, 상위 4,500명에게는 Udacity 나노학위 과정(3개월)을 전액 지원합니다. 신청 마감은 6월 24일입니다.</p>
+  <a class="source" href="https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-ai-ml-scholars-program-agent-plugin-for-aws-serverless-and-more-march-30-2026/" target="_blank">AWS Blog</a>
 </div>
 
 <!-- ===================== 정책/규제 ===================== -->
 <h2 class="section-title" id="policy">📋 정책/규제</h2>
 
 <div class="card">
-  <h3>트럼프, 국가 AI 입법 프레임워크 공개 — 주법 선점, 경량 규제 <span class="badge badge-new">NEW</span></h3>
-  <p>백악관이 3월 20일 "국가 AI 정책 프레임워크: 입법 권고안"을 발표했습니다. 6대 정책 목표(아동 보호, 지적재산권, 표현의 자유, 혁신 촉진, 인력 양성, 커뮤니티 보호)를 제시하며, 핵심은 주(州) AI 법 선점과 기존 연방 기관 중심의 경량 규제입니다. 새로운 AI 전담 규제 기관 신설은 명시적으로 반대했습니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 미국이 주별 AI 규제를 연방 차원에서 통일하려는 움직임입니다. 미국 시장 AI 서비스를 기획할 때, 주별로 다른 규제 대응 대신 연방 기준 하나만 따르면 될 가능성이 높아졌습니다. 다만 아직 입법 전이므로 진행 상황을 모니터링하세요.</div>
-  <a class="source" href="https://www.whitehouse.gov/releases/2026/03/president-donald-j-trump-unveils-national-ai-legislative-framework/" target="_blank">White House</a>
-</div>
-
-<div class="card">
-  <h3>AI 저작권 — 트럼프 행정부 "AI 학습은 합법" 입장 표명</h3>
-  <p>국가 AI 프레임워크에서 트럼프 행정부는 AI 학습용 저작물 활용이 합법이라는 입장을 밝히면서, 최종 판단은 법원에 맡기겠다고 했습니다. 동시에 무단 AI 생성 디지털 복제물에 대한 연방 보호를 권고했습니다.</p>
-  <a class="source" href="https://www.cnbc.com/2026/03/20/trump-ai-policy-framework.html" target="_blank">CNBC</a>
+  <h3>미국 주(州)별 AI 바이어스 감사법 발효 — 채용·대출·의료 AI 대상 <span class="badge badge-new">NEW</span></h3>
+  <p>미국에서 주(州) 단위 AI 규제법이 본격 시행에 들어갔습니다. 채용, 대출, 의료 등 고위험 분야 AI 시스템에 대해 바이어스 감사, 영향 평가, 투명성 공개를 의무화합니다. 워싱턴주는 3월 12일 AI 공개 의무와 챗봇 안전에 관한 2개 법안을 통과시켰습니다. 연방 차원에서는 TRUMP AMERICA AI Act(300페이지 초안)이 고위험 AI 시스템의 연간 제3자 감사를 요구합니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI 기능이 채용·신용·의료 의사결정에 관여하면 바이어스 감사가 법적 의무가 됩니다. 물류/이커머스에서도 AI 기반 가격 책정, 배송 우선순위 결정 등이 규제 대상이 될 수 있습니다. AI 기능 로드맵 수립 시 감사 가능한 설계(explainability, audit trail)를 초기부터 반영하세요.</div>
+  <a class="source" href="https://rits.shanghai.nyu.edu/ai/ai-accountability-in-2026-state-laws-take-effect-as-federal-proposals-compete" target="_blank">NYU Shanghai</a>
 </div>
 
 <!-- ===================== AI 보안 이슈 ===================== -->
 <h2 class="section-title" id="security">🔒 AI 보안 이슈</h2>
 
 <div class="card">
-  <h3>LiteLLM 공급망 공격 — Trivy CI/CD 경유, 크리덴셜 탈취 3단계 악성코드 <span class="badge badge-security">CRITICAL</span></h3>
-  <p>3월 24일, 위협 행위자 TeamPCP가 Trivy GitHub Action을 먼저 장악한 뒤 LiteLLM CI/CD 파이프라인을 통해 PyPI 배포 토큰을 탈취했습니다. v1.82.7~v1.82.8에 삽입된 악성 코드는 3단계로 작동합니다: SSH 키·클라우드 크리덴셜·K8s 시크릿 수집 → K8s 권한 상승 및 횡적 이동 → systemd 백도어 설치. 약 3시간 만에 PyPI에서 격리되었으나, LiteLLM은 일일 340만 다운로드, 클라우드 환경 36%에 설치되어 있습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 게이트웨이가 공급망 공격의 주요 타깃이 되었습니다. LiteLLM 사용 중이라면 즉시 버전을 확인하세요. 대응 방안: (1) pip install 시 해시 검증(--require-hashes), (2) GitHub Actions에서 Third-party Action은 SHA 핀닝, (3) K8s에서 Pod Security Standards strict 모드 적용, (4) .env와 크리덴셜을 AWS Secrets Manager/KMS로 관리.</div>
-  <a class="source" href="https://www.theregister.com/2026/03/24/trivy_compromise_litellm/" target="_blank">The Register</a>
+  <h3>OpenClaw AI 에이전트 보안 위기 — 4일간 9 CVE, 마켓플레이스 12% 악성 <span class="badge badge-security">CRITICAL</span></h3>
+  <p>GitHub 스타 13.5만을 기록한 AI 에이전트 OpenClaw에서 4일간(3/18~21) 9건의 CVE가 공개되었습니다. 최고 CVSS 9.9점, 총 보안 권고 156건(128건 CVE 미할당). 샌드박스 우회로 자식 프로세스가 제한 없이 실행되는 취약점, "allow always" 기능 악용 RCE 등이 발견되었습니다. 공개 마켓플레이스 ClawHub에서는 2,857개 스킬 중 341개(12%)가 키로거·인포스틸러를 배포하는 악성 스킬로 확인되었습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 에이전트의 "자율 실행" 능력이 보안 위협의 새로운 차원을 열었습니다. (1) AI 에이전트에게 최소 권한만 부여(PoLP), (2) 셸 명령 실행은 화이트리스트 기반으로 제한, (3) 서드파티 스킬/플러그인은 코드 리뷰 후 사용, (4) 에이전트 실행 환경을 네트워크 격리된 컨테이너에서 운영하세요.</div>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — "앱스토어"와 같은 AI 에이전트 마켓플레이스에서 12%가 악성이라는 수치는 충격적입니다. AI 에이전트 기반 서비스를 기획할 때, 서드파티 플러그인 검증 프로세스(코드 서명, 보안 스캔, 리뷰)를 MVP 단계부터 설계해야 합니다.</div>
+  <a class="source" href="https://www.darkreading.com/application-security/critical-openclaw-vulnerability-ai-agent-risks" target="_blank">Dark Reading</a>
 </div>
 
 <div class="card">
-  <h3>MCP 구현체 60일간 CVE 30건 — 38% 서버 인증 없음 <span class="badge badge-security">HIGH</span></h3>
-  <p>MCP가 9,700만 다운로드를 돌파한 가운데, 보안 연구자들이 60일간 30건의 CVE를 MCP 구현체에서 발견했습니다. TypeScript SDK 데이터 누출(CVE-2026-25536), MCPJam Inspector RCE(CVE-2026-23744) 등. 500개 이상 공개 MCP 서버 스캔 결과 38%가 인증이 전혀 없었습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — MCP 서버를 운영하거나 사용할 때 반드시 인증/인가를 구현하세요. 최소한 API 키 + TLS를 적용하고, 민감한 데이터를 다루는 MCP 서버는 IAM 역할 기반 접근 제어를 추가하세요. 사내 MCP 서버를 VPC 내부에서만 접근 가능하도록 네트워크 격리도 권장합니다.</div>
-  <a class="source" href="https://www.rockcybermusings.com/p/weekly-musings-top-10-ai-security-20260320-20260326" target="_blank">Rock Cyber Musings</a>
+  <h3>GitGuardian: GitHub 시크릿 2,900만건 유출 — AI 코드 커밋 유출률 2배 <span class="badge badge-security">HIGH</span> <span class="badge badge-hn">HN</span></h3>
+  <p>GitGuardian의 State of Secrets Sprawl 2026 보고서에 따르면, 2025년 공개 GitHub에서 2,865만 건의 새 하드코딩 시크릿이 발견되었습니다(전년 대비 34% 증가). AI 코딩 도구 사용 커밋의 시크릿 유출률은 3.2%로 일반 커밋(1.5%) 대비 2배입니다. MCP 설정 파일에서만 24,008개의 고유 시크릿이 노출되었고, 2022년 확인된 유효 크리덴셜의 64%가 2026년 1월에도 여전히 유효합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 코딩 도구가 시크릿 유출을 가속화하고 있습니다. 대응: (1) pre-commit 훅에 GitGuardian/gitleaks 필수 적용, (2) AI가 생성한 코드의 시크릿 스캔을 CI에서 이중 검증, (3) .env 파일 대신 AWS Secrets Manager/Parameter Store 사용, (4) MCP 설정 파일을 .gitignore에 반드시 추가. 크리덴셜 로테이션 주기도 단축하세요.</div>
+  <a class="source" href="https://blog.gitguardian.com/the-state-of-secrets-sprawl-2026/" target="_blank">GitGuardian</a>
 </div>
 
 <div class="card">
-  <h3>프롬프트 인젝션 540% 급증 + AI 에이전트 8곳 중 1곳 침해 <span class="badge badge-security">SECURITY</span></h3>
-  <p>HackerOne가 검증된 프롬프트 인젝션 취약점이 전년 대비 540% 급증했다고 보고했습니다. 별도 조사에서는 기업 8곳 중 1곳이 AI 에이전트 관련 보안 침해를 경험했으며, 37%의 조직이 AI 에이전트로 인한 운영 문제(서비스 중단, 데이터 손상 포함)를 겪었습니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI 에이전트 도입 시 보안 예산과 테스트 일정을 반드시 포함하세요. "8곳 중 1곳 침해"는 무시할 수 없는 수치입니다. AI 에이전트에게 부여하는 권한 범위를 최소한으로 설계하고, 주요 액션은 인간 승인 단계를 거치도록 기획하세요.</div>
-  <a class="source" href="https://www.helpnetsecurity.com/2026/03/06/march-2026-patch-tuesday-forecast/" target="_blank">Help Net Security</a>
+  <h3>ChatGPT 대화 데이터 은밀 탈취 취약점 — 단일 프롬프트로 전체 대화 유출 <span class="badge badge-security">SECURITY</span></h3>
+  <p>이전에 알려지지 않았던 ChatGPT 취약점이 공개되었습니다. 단일 악성 프롬프트로 사용자의 대화 내용, 업로드 파일 등 민감 데이터를 사용자 모르게 탈취할 수 있었습니다. 대화를 은밀한 데이터 유출 채널로 변환하는 방식입니다. OpenAI는 2월 20일 책임 공개를 통해 해당 이슈를 패치했습니다.</p>
+  <a class="source" href="https://www.xloggs.com/2026/03/30/weekly-threat-report-2026-03-30/" target="_blank">Xloggs</a>
 </div>
 
 <!-- ===================== 국내 소식 ===================== -->
 <h2 class="section-title" id="kr">🇰🇷 국내 소식</h2>
 
 <div class="card">
-  <h3>정보통신전략위원회, 'AI 3대 강국' 디지털 토대 4대 핵심전략 확정 <span class="badge badge-new">NEW</span></h3>
-  <p>3월 29일 과학기술정보통신부가 정보통신전략위원회 제13회 전체회의를 개최하여 'AI 3대 강국 도약을 위한 디지털 토대 마련' 방안을 확정했습니다. 4대 핵심전략으로 5G 고도화, 2030년 6G 상용화 목표 기술 개발, 사이버 보안 체계 강화, 국가 데이터 통합 플랫폼 구축을 추진합니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 국가 데이터 통합 플랫폼은 공공 데이터 기반 AI 서비스 기획에 중요한 인프라입니다. 물류·유통 분야 공공 데이터(관세, 물류 통계 등)가 통합 플랫폼으로 제공되면, AI 수요 예측·경로 최적화 서비스의 데이터 확보가 수월해집니다.</div>
-  <a class="source" href="https://dazabi.com/insurance_magazine/article.php?id=11063" target="_blank">다자비</a>
+  <h3>WTO, 2026년 세계 무역 1.9%로 급감 전망 — AI 투자와 지정학 긴장 상충 <span class="badge badge-new">NEW</span></h3>
+  <p>WTO가 2026년 세계 상품 무역 성장률을 1.9%로 전망했습니다(2025년 4.6% 대비 급감). AI 관련 투자 확대라는 긍정적 요인과 중동 지정학적 긴장이라는 부정적 요인이 상충한 결과입니다. 한국 수출 기업에게도 직접적 영향이 예상됩니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 무역 둔화 속에서도 AI 관련 투자는 긍정적 요인으로 분류됩니다. 물류/이커머스 기획 시 전반적 물동량 감소와 AI 인프라 수출 증가라는 양면을 고려해야 합니다. AI 칩·서버 물류는 성장하지만 일반 소비재 물동량은 줄어드는 구조 변화에 주목하세요.</div>
+  <a class="source" href="https://www.kjob.news/news/477317" target="_blank">전국인력신문</a>
 </div>
 
 <div class="card">
-  <h3>그록 등 AI 생성 콘텐츠 오남용 대응 — 프라이버시 공동선언 채택 <span class="badge badge-new">NEW</span></h3>
-  <p>개인정보보호위원회가 그록(Grok) 등 AI 생성 콘텐츠의 오남용 문제에 대응하기 위한 프라이버시 공동선언을 채택했습니다. AI가 개인 정보를 학습·생성하는 과정에서의 개인정보 보호 강화 방안을 담고 있습니다.</p>
-  <a class="source" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156745494" target="_blank">대한민국 정책브리핑</a>
+  <h3>AI 기반 검색 전환 가속 — 한국 소비자, 생성형 엔진 최적화(GEO)로 이동</h3>
+  <p>한국 소비자의 검색 행태가 전통적 SEO에서 생성형 엔진 최적화(GEO)로 빠르게 전환되고 있습니다. AI 기반 검색이 구매 결정의 중심에 자리잡으면서, 기업들은 AI 검색 엔진에 최적화된 콘텐츠 전략을 재설계해야 하는 상황입니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — SEO → GEO(Generative Engine Optimization) 전환은 마케팅·상품 기획에 직접적 영향을 미칩니다. 상품 설명, FAQ, 리뷰 데이터를 AI 검색 엔진이 잘 이해할 수 있는 구조화된 형태로 정리하는 것이 새로운 경쟁 우위가 됩니다.</div>
+  <a class="source" href="https://watch.searchmaster.co.kr/2026/03/0328-2026-ai.html" target="_blank">SearchMaster</a>
 </div>
 
 <div class="card">
-  <h3>2026 AI 프라이버시 민·관 정책협의회 출범</h3>
-  <p>AI 시대의 개인정보 보호를 위한 민·관 합동 정책협의회가 공식 출범했습니다. AI 개발사, 학계, 시민단체, 정부 기관이 참여하여 AI 프라이버시 가이드라인 수립과 자율 규제 방안을 논의합니다.</p>
-  <a class="source" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156742576" target="_blank">대한민국 정책브리핑</a>
+  <h3>2026 테크 해고 45,000명 돌파 — AI 전환이 최다 사유</h3>
+  <p>2026년 3월 초까지 글로벌 테크 업계 해고가 45,000명을 넘었습니다. Atlassian(1,600명), Oracle(20,000~30,000명 계획) 등 대형 감원의 공통 사유는 "AI 전환을 위한 리소스 재배치"입니다. AI가 소프트웨어 개발 생산성을 높이면서 필요 인력 규모와 스킬 구성이 변화하고 있습니다.</p>
+  <a class="source" href="https://techcrunch.com/2026/03/12/atlassian-follows-blocks-footsteps-and-cuts-staff-in-the-name-of-ai/" target="_blank">TechCrunch</a>
 </div>
 
 <!-- ===================== 오늘의 주목 포인트 ===================== -->
 <h2 class="section-title">🎯 오늘의 주목 포인트</h2>
 
 <div class="spotlight">
-  <span class="num">1</span><h3>LiteLLM 공급망 공격 — AI 인프라가 새로운 공격 표면</h3>
-  <p>클라우드 환경 36%에 설치된 AI 게이트웨이가 CI/CD 파이프라인을 통해 3단계 악성코드에 감염되었습니다. Trivy → PyPI 토큰 탈취 → K8s 횡적 이동까지의 정교한 공격 체인은 AI 공급망 보안이 더 이상 선택이 아님을 보여줍니다. pip 해시 검증, Action SHA 핀닝, K8s Pod Security 강화가 즉시 필요합니다.</p>
+  <span class="num">1</span><h3>OpenClaw 보안 위기 — AI 에이전트 시대의 "앱스토어 악성 앱" 문제</h3>
+  <p>13.5만 GitHub 스타의 AI 에이전트에서 4일간 9건의 CVE가 쏟아지고, 마켓플레이스의 12%가 악성 스킬이라는 충격적 수치가 나왔습니다. AI 에이전트가 셸 명령을 실행하고 파일을 읽고 이메일을 보내는 시대에, "자율성"은 곧 "공격 표면"입니다. 에이전트 보안은 2026년 보안 팀의 최우선 과제가 되어야 합니다.</p>
 </div>
 
 <div class="spotlight">
-  <span class="num">2</span><h3>봇 트래픽 51% — 인터넷의 주인이 바뀌었다</h3>
-  <p>자동화 트래픽이 인간을 공식 추월했습니다. AI 에이전트 트래픽 8,000% 폭증은 웹 서비스의 설계 전제를 바꿉니다. "사용자 = 인간"이라는 가정이 더 이상 유효하지 않으며, API 설계, 요금제, 분석 파이프라인 모두 봇 트래픽을 전제로 재설계해야 합니다.</p>
+  <span class="num">2</span><h3>llm-d가 CNCF로 — K8s가 AI 추론의 표준 인프라로 진화</h3>
+  <p>IBM, Red Hat, Google이 LLM 추론을 K8s 네이티브 워크로드로 만드는 llm-d를 CNCF에 기증했습니다. NVIDIA, AMD, Intel, Mistral AI 등이 공동 참여하는 것은 "AI 추론 = K8s 워크로드"라는 공감대가 형성되었음을 의미합니다. EKS/GKE에서 LLM을 직접 서빙하는 팀에게는 표준 아키텍처의 등장입니다.</p>
 </div>
 
 <div class="spotlight">
-  <span class="num">3</span><h3>AMI Labs $10.3억 — LLM 패러다임에 대한 가장 큰 베팅</h3>
-  <p>Yann LeCun의 JEPA 아키텍처는 "다음 토큰 예측"이 아닌 "세계 모델 학습"을 지향합니다. 유럽 역대 최대 시드 $10.3억은 현재 LLM 패러다임의 한계에 대한 시장의 인식을 반영합니다. 로보틱스, 물류 시뮬레이션, 자율주행 등 물리 세계를 다루는 AI에서 새로운 가능성이 열릴 수 있습니다.</p>
+  <span class="num">3</span><h3>GitHub 시크릿 2,900만건 — AI 코딩이 보안 부채를 가속화</h3>
+  <p>AI 코딩 도구 커밋의 시크릿 유출률이 일반 대비 2배(3.2% vs 1.5%)입니다. 2022년 유출된 크리덴셜의 64%가 4년 후에도 유효하다는 사실은 크리덴셜 관리의 근본적 문제를 드러냅니다. AI가 코드 작성 속도를 높일수록 보안 부채도 빠르게 쌓이고 있습니다.</p>
 </div>
 
 <footer>
