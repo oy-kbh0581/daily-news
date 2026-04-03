@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Weekly Recap — 2026 W14 (3/30~4/3)</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --border: #e8ebed;
+    --text: #1a1a1a;
+    --text-secondary: #6b7684;
+    --olive: #9bce26;
+    --olive-dark: #7ab51d;
+    --olive-light: #e8f5d0;
+    --olive-bg: #f4fae6;
+    --coral: #ff6b6b;
+    --coral-light: #fff0f0;
+    --purple: #7c5cfc;
+    --purple-light: #f0ecff;
+    --orange-hn: #ff6600;
+    --orange-hn-bg: #fff5ee;
+    --red-security: #e53e3e;
+    --red-security-bg: #fff5f5;
+    --blue-new: #3182ce;
+    --blue-new-bg: #ebf4ff;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+    --radius: 16px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.75;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 720px; margin: 0 auto; padding: 2rem 1.2rem 3rem; }
+
+  .header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+    padding: 2.5rem 1.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,.1);
+    border-radius: 50%;
+    transform: rotate(13deg);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,.08);
+    border-radius: 50%;
+    transform: rotate(26deg);
+  }
+  .header-inner { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+  .header h1 { color: #fff; font-size: 1.6rem; font-weight: 800; letter-spacing: -.02em; }
+  .header .subtitle { color: rgba(255,255,255,.85); font-size: .88rem; margin-top: .25rem; }
+  .header .date { color: #fff; font-size: 1rem; margin-top: .6rem; font-weight: 600; }
+
+  .nav-wrap { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 10; }
+  .nav-inner { max-width: 720px; margin: 0 auto; padding: .6rem 1.2rem; display: flex; gap: .4rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner a {
+    flex-shrink: 0;
+    background: var(--bg);
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: .4rem .8rem;
+    border-radius: 20px;
+    font-size: .8rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .nav-inner a:hover { color: var(--olive-dark); border-color: var(--olive); background: var(--olive-bg); }
+
+  .archive { margin-bottom: 1.5rem; }
+  .archive summary { color: var(--text-secondary); font-size: .85rem; cursor: pointer; padding: .4rem 0; font-weight: 500; }
+  .archive summary:hover { color: var(--olive-dark); }
+  .archive-list { display: flex; flex-wrap: wrap; gap: .35rem; padding-top: .5rem; }
+  .archive-list a {
+    background: var(--surface); color: var(--text-secondary); text-decoration: none;
+    padding: .3rem .65rem; border-radius: 12px; font-size: .78rem; font-weight: 500;
+    border: 1px solid var(--border); transition: all .2s;
+  }
+  .archive-list a:hover { color: var(--olive-dark); border-color: var(--olive); }
+  .archive-list a.current { color: #fff; background: var(--coral); border-color: var(--coral); }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 2rem 0 .8rem;
+    padding-left: .75rem;
+    border-left: 4px solid var(--coral);
+    color: var(--text);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+    margin-bottom: .75rem;
+    box-shadow: var(--shadow-sm);
+    transition: all .2s;
+  }
+  .card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  .card h3 { font-size: .98rem; font-weight: 700; margin-bottom: .4rem; color: var(--text); line-height: 1.5; }
+  .card p { color: var(--text-secondary); font-size: .88rem; line-height: 1.7; margin-bottom: .5rem; }
+
+  .spotlight {
+    background: var(--surface);
+    border: 2px solid var(--coral);
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem;
+    margin-bottom: .75rem;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--coral), #ff9a76);
+  }
+  .spotlight .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--coral); color: #fff;
+    font-weight: 800; font-size: .8rem; margin-right: .5rem;
+  }
+  .spotlight h3 { display: inline; font-size: .98rem; font-weight: 700; color: var(--text); }
+  .spotlight p { color: var(--text-secondary); font-size: .88rem; margin-top: .4rem; line-height: 1.7; }
+
+  .highlight-dev {
+    background: var(--olive-bg);
+    border-left: 4px solid var(--olive);
+    border-radius: 0 12px 12px 0;
+    padding: .85rem 1.1rem;
+    margin: .7rem 0;
+    font-size: .85rem;
+    color: var(--text);
+  }
+  .highlight-dev strong { color: var(--olive-dark); }
+
+  .highlight-pm {
+    background: var(--purple-light);
+    border-left: 4px solid var(--purple);
+    border-radius: 0 12px 12px 0;
+    padding: .85rem 1.1rem;
+    margin: .7rem 0;
+    font-size: .85rem;
+    color: var(--text);
+  }
+  .highlight-pm strong { color: var(--purple); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: .75rem 0;
+    font-size: .85rem;
+  }
+  th {
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-align: left;
+    padding: .6rem .8rem;
+    border-bottom: 2px solid var(--border);
+  }
+  td {
+    padding: .55rem .8rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  tr:hover td { background: var(--olive-bg); }
+
+  .action-list { list-style: none; padding: 0; }
+  .action-list li {
+    padding: .6rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: .88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .action-list li::before { content: '▸ '; color: var(--olive); font-weight: 700; }
+  .action-list li:last-child { border-bottom: none; }
+
+  footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: .78rem;
+    margin-top: 2.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  @media (max-width: 480px) {
+    .header { padding: 2rem 1rem 1.5rem; }
+    .header h1 { font-size: 1.35rem; }
+    .container { padding: 1.2rem 1rem 2rem; }
+    .card { padding: 1rem 1.1rem; }
+    table { font-size: .78rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <h1>AI Weekly Recap</h1>
+    <div class="subtitle">이번 주 AI 뉴스를 한눈에 정리</div>
+    <div class="date">2026년 W14 (3/30 ~ 4/3)</div>
+  </div>
+</div>
+
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <a href="#top5">🏆 TOP 5</a>
+    <a href="#themes">🔥 주요 테마</a>
+    <a href="#numbers">📊 숫자로 보는 한 주</a>
+    <a href="#dev-actions">💡 개발자 액션</a>
+    <a href="#pm-actions">📋 기획자 액션</a>
+  </div>
+</div>
+
+<div class="container">
+
+<details class="archive" open>
+  <summary>📅 이번 주 일간 다이제스트</summary>
+  <div class="archive-list">
+    <a class="current" href="ai-weekly-recap-2026-w14.html">📊 W14 주간정리</a>
+    <a href="ai-daily-digest-2026-04-03.html">4/3 (금)</a>
+    <a href="ai-daily-digest-2026-04-02.html">4/2 (목)</a>
+    <a href="ai-daily-digest-2026-04-01.html">4/1 (수)</a>
+    <a href="ai-daily-digest-2026-03-31.html">3/31 (화)</a>
+    <a href="ai-daily-digest-2026-03-30.html">3/30 (월)</a>
+  </div>
+</details>
+
+<!-- ===================== TOP 5 ===================== -->
+<h2 class="section-title" id="top5">🏆 이번 주 TOP 5</h2>
+
+<div class="spotlight">
+  <span class="num">1</span><h3>OpenAI $122B 펀딩 — 벤처 역사 최대, 기업가치 $852B</h3>
+  <p>Amazon $500억, Nvidia·SoftBank 각 $300억이 참여한 인류 역사상 최대 벤처 라운드. Q1 2026 전체 VC $3,000억 중 AI가 80%를 흡수했으며, 상위 4개 딜(OpenAI, Anthropic, xAI, Waymo)이 65%를 차지. 2026년 하반기 IPO가 유력합니다. <em>[4/2]</em></p>
+</div>
+
+<div class="spotlight">
+  <span class="num">2</span><h3>LiteLLM 공급망 공격 + Claude Code 소스 유출 — AI 도구의 구조적 취약점</h3>
+  <p>LiteLLM: Trivy GitHub Action 장악 → PyPI 토큰 탈취 → 3단계 악성코드. 클라우드 환경 36%에 설치된 AI 게이트웨이가 감염. Claude Code: .npmignore 설정 오류로 51만줄 소스코드가 npm에 노출, 동시에 악성 axios 패키지 업로드. AI 도구 자체가 공급망 공격의 표적이 되는 시대. <em>[3/30, 4/2]</em></p>
+</div>
+
+<div class="spotlight">
+  <span class="num">3</span><h3>Stripe Minions — 주당 1,300 PR, 인간 코드 0줄의 프로덕션 레퍼런스</h3>
+  <p>Slack 메시지 → AI 에이전트가 자동으로 PR 생성 → 테스트 통과 → 인간 리뷰 후 머지. 워밍된 devbox + 중앙 MCP 서버(500개 도구) + 인간 리뷰 필수의 3원칙. "AI가 코딩할 수 있느냐"가 아니라 "어떻게 프로덕션에 안전하게 통합하느냐"의 답을 보여줬습니다. <em>[4/3]</em></p>
+</div>
+
+<div class="spotlight">
+  <span class="num">4</span><h3>AI 에이전트 보안 위기 — OpenClaw, CrewAI, Langflow 연쇄 취약점</h3>
+  <p>OpenClaw: 9 CVE in 4일, 마켓플레이스 12% 악성. CrewAI: Docker 미사용 시 샌드박스 우회 → RCE 체인. Langflow: CVSS 9.3, 20시간 만에 실전 공격. 에이전트 스킬 30,000개 분석 결과 25%+ 취약. 83% 도입 계획이지만 29%만 보안 준비. <em>[3/31, 4/1, 4/2, 4/3]</em></p>
+</div>
+
+<div class="spotlight">
+  <span class="num">5</span><h3>Anthropic vs 미국 정부 — Claude Mythos 유출과 AI 윤리 법정 다툼</h3>
+  <p>Mythos: Opus를 넘는 "Capybara" 티어, "전례 없는 사이버보안 위험"으로 정부 비공개 경고. 동시에 "대규모 감시 금지" 가드레일을 요구한 Anthropic을 정부가 "공급망 위험"으로 지정 → 법원이 "처벌"로 판단 → DOJ 항소. AI 안전과 정부 관계의 판례가 될 사건. <em>[4/2, 4/3]</em></p>
+</div>
+
+<!-- ===================== 주요 테마 ===================== -->
+<h2 class="section-title" id="themes">🔥 주요 테마</h2>
+
+<div class="card">
+  <h3>테마 1: AI 에이전트 보안의 구조적 위기</h3>
+  <p>이번 주 가장 일관된 테마입니다. OpenClaw(9 CVE, 마켓플레이스 12% 악성), CrewAI(샌드박스 우회 → RCE), Langflow(CVSS 9.3), LangChain(파일·시크릿·대화 이력 노출), GitGuardian(AI 코드 커밋 시크릿 유출률 2배) — AI 에이전트와 개발 도구의 보안 취약점이 매일 발견되고 있습니다. "자율성"이 곧 "공격 표면"이라는 원칙이 반복적으로 입증되었습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 에이전트 도입 전 보안 체크리스트: (1) 최소 권한 원칙(PoLP), (2) 서드파티 스킬 화이트리스트, (3) 네트워크 격리 컨테이너, (4) pre-commit 시크릿 스캔 필수, (5) GitHub Actions SHA 핀닝, (6) pip 해시 검증.</div>
+</div>
+
+<div class="card">
+  <h3>테마 2: AI 인프라 투자의 초대형화</h3>
+  <p>OpenAI $122B 펀딩, Meta 데이터센터 $100B(6배 확대), Mistral $830M 부채 금융, Oracle $156B AI 인프라 전환, Amazon Exascale $8-12B — 빅테크의 2026년 합산 AI 인프라 지출이 $6,500억을 넘었습니다. Q1 VC $3,000억 중 AI가 80%를 흡수한 것은 "AI 외의 모든 것"에 대한 투자 가뭄을 의미하기도 합니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 초대형 인프라 투자 → 추론 비용 하락 → API 가격 인하로 이어집니다. "비용 때문에 보류했던" AI 유스케이스를 분기별로 재평가하세요. 다만 상위 4개 기업 집중(65%)은 "승자 독식" 구조이므로 벤더 다변화가 중요합니다.</div>
+</div>
+
+<div class="card">
+  <h3>테마 3: AI 기반 인력 구조조정 본격화</h3>
+  <p>Oracle 2~3만 명(18%), Atlassian 1,600명(10%), 2026년 3월까지 글로벌 테크 해고 45,000명 — 공통 사유는 "AI 전환을 위한 리소스 재배치"입니다. 동시에 Stripe Minions(주당 1,300 PR)는 AI가 실제로 반복적 개발 업무를 대체하고 있음을 보여줍니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI가 "비용 절감 도구"에서 "인력 구조 변화 동인"으로 전환되었습니다. 프로덕트 팀 구성 시 AI 도구 활용 역량을 핵심 요건으로 반영하고, AI가 대체하기 어려운 도메인 전문성·고객 이해 역할에 투자하세요.</div>
+</div>
+
+<div class="card">
+  <h3>테마 4: K8s가 AI 추론의 표준 인프라로 진화</h3>
+  <p>llm-d가 IBM/Red Hat/Google에 의해 CNCF 샌드박스 프로젝트로 기증되었습니다. NVIDIA, AMD, Intel, Mistral AI 등이 공동 참여하며 "AI 추론 = K8s 워크로드"라는 업계 공감대가 형성되었습니다. AWS + Cerebras CS-3 통합도 Bedrock을 통한 최고속 추론을 제공합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — EKS에서 LLM 서빙을 운영하는 팀이라면 llm-d의 prefill/decode 분리 아키텍처를 검토하세요. K8s HPA 기반 오토스케일링과 자연스럽게 연동되어 GPU 활용률을 높이고 레이턴시를 줄일 수 있습니다.</div>
+</div>
+
+<!-- ===================== 숫자로 보는 한 주 ===================== -->
+<h2 class="section-title" id="numbers">📊 숫자로 보는 한 주</h2>
+
+<table>
+  <thead>
+    <tr><th>지표</th><th>수치</th><th>의미</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Q1 2026 글로벌 VC</td><td><strong>$3,000억</strong></td><td>역대 최고, AI가 80% 흡수</td></tr>
+    <tr><td>OpenAI 펀딩</td><td><strong>$1,220억</strong></td><td>인류 역사상 최대 벤처 라운드</td></tr>
+    <tr><td>Stripe Minions PR</td><td><strong>1,300+/주</strong></td><td>인간 코드 0줄, AI 자동 생성</td></tr>
+    <tr><td>봇 트래픽 비중</td><td><strong>51%</strong></td><td>인간 트래픽을 공식 추월</td></tr>
+    <tr><td>AI 코드 시크릿 유출률</td><td><strong>3.2%</strong></td><td>일반 커밋(1.5%) 대비 2배</td></tr>
+    <tr><td>GitHub 시크릿 유출</td><td><strong>2,865만건</strong></td><td>전년 대비 34% 증가</td></tr>
+    <tr><td>AI 에이전트 스킬 취약률</td><td><strong>25%+</strong></td><td>30,000개 분석 결과</td></tr>
+    <tr><td>에이전틱 AI 보안 준비율</td><td><strong>29%</strong></td><td>83% 도입 계획 대비 극심한 격차</td></tr>
+    <tr><td>2026 테크 해고</td><td><strong>45,000+명</strong></td><td>3월까지 누적, AI 전환이 최다 사유</td></tr>
+    <tr><td>Qwen 3.6-Plus 입력 가격</td><td><strong>$0.29/M</strong></td><td>Claude Opus급 성능에 초저가</td></tr>
+  </tbody>
+</table>
+
+<!-- ===================== 개발자 액션 ===================== -->
+<h2 class="section-title" id="dev-actions">💡 개발자 액션 아이템</h2>
+
+<div class="card">
+  <ul class="action-list">
+    <li><strong>AI 도구 공급망 보안 감사</strong> — LiteLLM 버전 확인, pip 해시 검증(--require-hashes) 적용, GitHub Actions 서드파티 액션 SHA 핀닝. CI/CD 파이프라인에서 AI 관련 의존성의 무결성을 즉시 점검하세요.</li>
+    <li><strong>pre-commit 시크릿 스캔 게이트 도입</strong> — GitGuardian/gitleaks를 pre-commit 훅에 필수 적용. AI 코딩 도구 사용 시 시크릿 유출률이 2배이므로, AI 생성 코드의 시크릿 스캔을 CI에서 이중 검증하세요.</li>
+    <li><strong>AI 에이전트 샌드박스 점검</strong> — CrewAI의 "Docker 미사용 시 안전하지 않은 폴백" 사례를 참고하여, 자체 AI 에이전트의 폴백 메커니즘이 fail-closed인지 확인. 에이전트 실행 환경을 네트워크 격리된 컨테이너에서 운영하세요.</li>
+    <li><strong>llm-d 평가 시작</strong> — EKS에서 LLM 서빙을 운영하거나 계획 중이라면, CNCF 샌드박스 프로젝트 llm-d의 prefill/decode 분리 아키텍처를 PoC로 테스트. K8s HPA 연동 자동 스케일링 시나리오를 확인하세요.</li>
+    <li><strong>Stripe Minions 패턴 참고 설계</strong> — Gradle 빌드 캐시가 워밍된 표준 EC2 이미지 + 내부 API/DB 도구를 노출하는 MCP 서버 + Goose/Claude Code 기반 에이전트. 반복적 업무(테스트 수정, 마이그레이션)부터 시작하세요.</li>
+  </ul>
+</div>
+
+<!-- ===================== 기획자 액션 ===================== -->
+<h2 class="section-title" id="pm-actions">📋 기획자 액션 아이템</h2>
+
+<div class="card">
+  <ul class="action-list">
+    <li><strong>AI 기능 비용 시나리오 업데이트</strong> — OpenAI IPO, Qwen 3.6-Plus($0.29/M), 빅테크 $6,500억 인프라 투자 → API 가격 하락 추세. "비용 때문에 보류했던" AI 유스케이스를 Q2 중 재평가하세요.</li>
+    <li><strong>에이전틱 AI 도입 시 보안 예산 반영</strong> — "83% 도입 계획, 29% 보안 준비" 격차를 참고. 에이전트 보안 감사, 스킬 검증 프로세스, 권한 설계를 MVP 단계부터 포함하세요. "8곳 중 1곳 침해"는 무시할 수 없는 수치입니다.</li>
+    <li><strong>AI 자동화 대상 업무 식별</strong> — Stripe의 "flaky 테스트 수정, 마이그레이션 적용, 명확한 스펙의 기능 구현" 자동화 사례를 참고. 팀 내 반복적·예측 가능한 업무를 식별하고, AI 자동화 PoC 일정을 잡으세요.</li>
+    <li><strong>AI 규제 모니터링 강화</strong> — 미국 주별 바이어스 감사법 발효, Anthropic-정부 판례, 트럼프 AI 프레임워크. AI 기능이 채용·신용·의료 의사결정에 관여하면 감사 의무가 발생합니다. 감사 가능한 설계(explainability, audit trail)를 초기부터 반영하세요.</li>
+    <li><strong>봇 트래픽 대응 분석 파이프라인 점검</strong> — 봇 트래픽 51%로 인간 추월. GA4/분석 도구의 봇 필터링을 점검하고, AI 에이전트를 통한 주문이 증가할 수 있으므로 API-first 전략을 검토하세요.</li>
+  </ul>
+</div>
+
+<footer>
+  AI Weekly Recap W14 — Claude Code로 자동 생성 · 출처를 반드시 확인하세요
+</footer>
+
+</div>
+</body>
+</html>
