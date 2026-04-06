@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Daily Digest — 2026-04-03</title>
+<title>AI Daily Digest — 2026-04-06</title>
 <style>
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
@@ -208,7 +208,7 @@
   <div class="header-inner">
     <h1>AI Daily Digest</h1>
     <div class="subtitle">오늘의 AI 뉴스를 한눈에</div>
-    <div class="date">2026년 4월 3일 금요일</div>
+    <div class="date">2026년 4월 6일 월요일</div>
   </div>
 </div>
 
@@ -230,12 +230,12 @@
   <div class="archive-list">
     <a class="weekly" href="ai-daily-digest/output/ai-weekly-recap-2026-w14.html">📊 W14 주간정리</a>
     <a class="weekly" href="ai-daily-digest/output/ai-weekly-recap-2026-w13.html">📊 W13 주간정리</a>
-    <a class="current" href="ai-daily-digest/output/ai-daily-digest-2026-04-03.html">4/3 (금)</a>
+    <a class="current" href="ai-daily-digest/output/ai-daily-digest-2026-04-06.html">4/6 (월)</a>
+    <a href="ai-daily-digest/output/ai-daily-digest-2026-04-03.html">4/3 (금)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-04-02.html">4/2 (목)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-04-01.html">4/1 (수)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-03-31.html">3/31 (화)</a>
     <a href="ai-daily-digest/output/ai-daily-digest-2026-03-30.html">3/30 (월)</a>
-    <a href="ai-daily-digest/output/ai-daily-digest-2026-03-27.html">3/27 (금)</a>
   </div>
 </details>
 
@@ -243,119 +243,133 @@
 <h2 class="section-title" id="tech">🔬 주요 기술 발전</h2>
 
 <div class="card">
-  <h3>Anthropic Claude Mythos 유출 — "Capybara" 티어, Opus를 넘는 "전례 없는" 사이버보안 위험 <span class="badge badge-new">NEW</span></h3>
-  <p>Anthropic의 CMS 설정 오류로 미발표 블로그 포스트 등 약 3,000개 비공개 자산이 노출되면서 Claude Mythos 모델의 존재가 확인되었습니다. Mythos는 기존 Opus를 넘는 새로운 "Capybara" 티어로, 코딩·학술 추론·사이버보안 벤치마크에서 Claude Opus 4.6 대비 "극적으로 높은" 점수를 기록합니다. Anthropic은 이 모델이 "전례 없는 사이버보안 위험"을 초래한다며 정부 관계자들에게 비공개 경고를 보내고 있으며, 소수의 얼리 액세스 고객에게만 제공 중입니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Mythos급 모델이 "대규모 사이버 공격을 상당히 더 가능하게 만든다"는 Anthropic 자체 평가는 AI 보안 방어 전략을 재검토하게 만듭니다. AI 에이전트가 "복잡한 작전을 최소한의 인간 개입으로 계획·실행"할 수 있다면, WAF 규칙과 침입 탐지 시스템의 AI 기반 공격 패턴 대응을 강화해야 합니다.</div>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — Opus를 넘는 Capybara 티어의 등장은 AI 모델 가격 체계를 재편할 수 있습니다. 현재 Opus가 최고 티어인 사용 계획이 있다면, Capybara 출시 시점과 가격을 모니터링하세요. 동시에 "전례 없는 위험" 경고는 AI 서비스의 규제 환경 변화 가능성을 시사합니다.</div>
-  <a class="source" href="https://fortune.com/2026/03/26/anthropic-says-testing-mythos-powerful-new-ai-model-after-data-leak-reveals-its-existence-step-change-in-capabilities/" target="_blank">Fortune</a>
+  <h3>Google Gemma 4 — Apache 2.0 오픈 모델, 31B Dense가 Arena AI 3위 <span class="badge badge-new">NEW</span></h3>
+  <p>Google이 4월 2일 Gemma 4를 공개했습니다. Gemini 3 기반의 오픈 모델 패밀리로, 31B Dense와 26B MoE를 포함한 4개 모델이 Apache 2.0 라이선스로 배포됩니다. 31B 모델이 Arena AI 텍스트 리더보드 3위를 차지하며 자신보다 20배 큰 모델을 능가했고, 256K 컨텍스트 윈도우, 네이티브 비전·오디오, 140개 이상 언어를 지원합니다. Gemma 시리즈 최초의 Apache 2.0 라이선스로, 엔터프라이즈 배포에 법적 리스크가 사실상 사라졌습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Apache 2.0으로 31B 모델을 온프레미스/프라이빗 클라우드에 자유롭게 배포 가능합니다. 에이전틱 워크플로우와 256K 컨텍스트가 네이티브 지원되므로, 사내 코드 리뷰 에이전트나 대규모 로그 분석 파이프라인을 외부 API 의존 없이 구축할 수 있습니다. 2B/4B Effective 모델은 Android AICore에도 통합되어 모바일 오프라인 추론이 가능합니다.</div>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — Google이 오픈 모델에 Apache 2.0을 적용한 것은 중국 오픈소스 모델(Qwen, DeepSeek)과의 경쟁 전략입니다. 무료 고성능 모델의 확산은 AI 기능 도입 비용을 급격히 낮춥니다. AI SaaS 구독 비용과 자체 호스팅 비용을 비교하여, 전략적으로 유리한 모델 도입 방식을 검토하세요.</div>
+  <a class="source" href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank">Google Blog</a>
 </div>
 
 <div class="card">
-  <h3>Alibaba Qwen 3.6-Plus — Claude Opus 4.5급 성능, 에이전틱 코딩 특화 <span class="badge badge-new">NEW</span></h3>
-  <p>4월 2일 알리바바가 Qwen 3.6-Plus를 출시했습니다. SWE-bench와 Terminal-Bench 2.0에서 Claude Opus 4.5와 동등한 성능을 보이며, 100만 토큰 컨텍스트 윈도우를 기본 제공합니다. 스크린샷·디자인 초안에서 코드를 생성하는 네이티브 멀티모달이며, 입력 2위안/M($0.29), 출력 12위안/M으로 가격이 매우 저렴합니다. 알리바바의 엔터프라이즈 AI 플랫폼 Wukong과 Qwen App에 통합됩니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Claude Opus급 성능이 $0.29/M 입력 가격에 제공됩니다. 리포지토리 레벨 코딩 작업(대규모 코드베이스 리팩토링, 마이그레이션 등)에서 비용 효율적인 대안이 될 수 있습니다. Claude Code와도 호환된다고 하니, 기존 에이전트 워크플로우에 통합 테스트를 해보세요.</div>
-  <a class="source" href="https://www.caixinglobal.com/2026-04-02/alibaba-releases-qwen-36-plus-ai-model-with-enhanced-coding-capabilities-102430395.html" target="_blank">Caixin Global</a>
+  <h3>PrismML Bonsai — 세계 최초 상용 1비트 LLM, 8B 모델이 1.15GB <span class="badge badge-new">NEW</span></h3>
+  <p>Caltech 출신 스타트업 PrismML이 4월 3일 스텔스에서 나와 세계 최초 상용 1비트 LLM 'Bonsai' 패밀리를 공개했습니다. 8B 모델이 1.15GB에 불과하여 iPhone 17 Pro에서 실행 가능하며, 기존 대비 14배 작고, 8배 빠르고, 5배 에너지 효율적입니다. 가중치를 {−1, +1} 부호와 그룹별 스케일 팩터로만 표현하는 네이티브 1비트 아키텍처로, 기존 양자화의 한계(지시 추종 저하, 도구 사용 불안정)를 극복했다고 주장합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — 1.15GB 모델이 동일 파라미터 클래스 모델과 경쟁력 있는 성능을 유지합니다. WMS 핸드헬드 터미널이나 웨어러블 디바이스에 로컬 LLM을 탑재하여, 클라우드 연결 없이 실시간 음성 명령 처리나 바코드 기반 상품 질의를 처리하는 시나리오가 현실적으로 가능해졌습니다. 4B(0.5GB), 1.7B(0.24GB) 모델도 함께 공개되었습니다.</div>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 클라우드 API 없이 스마트폰에서 동작하는 AI는 "오프라인 AI"를 제품 기능으로 제공할 수 있게 합니다. 냉동창고, 지하 물류센터 등 네트워크 취약 지역에서의 AI 기능 제공이 가능하며, API 호출 비용이 0이므로 대규모 배포 시 운영비 절감 효과가 큽니다.</div>
+  <a class="source" href="https://www.theregister.com/2026/04/04/prismml_1bit_llm/" target="_blank">The Register</a>
 </div>
 
 <!-- ===================== 기업/산업 동향 ===================== -->
 <h2 class="section-title" id="biz">🏢 기업/산업 동향</h2>
 
 <div class="card">
-  <h3>DOJ, Anthropic AI 금지 차단 판결에 항소 — 국방부 "공급망 위험" 지정 분쟁 계속 <span class="badge badge-new">NEW</span></h3>
-  <p>트럼프 행정부가 Anthropic AI 금지 조치를 차단한 연방 판사 결정에 항소합니다. 원래 분쟁은 Anthropic이 국방부와 계약 협상에서 "미국 시민 대규모 감시 금지", "자율 무기 배치 제한" 등 안전 가드레일을 요구한 데서 시작되었습니다. Rita Lin 판사는 금지 조치가 "국가 안보"가 아닌 "Anthropic을 처벌하기 위해 설계된 것"이라고 판시했으며, 항소심 서류 제출 기한은 4월 30일입니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI 안전 가드레일을 요구한 기업이 정부 금지 조치를 받는 전례 없는 상황입니다. AI 서비스를 공공 부문에 제공하는 기업이라면, 안전·윤리 조건과 정부 요구사항 사이의 균형이 법적 리스크가 될 수 있습니다. 계약 조건에서 AI 사용 범위를 명시하는 것이 더욱 중요해졌습니다.</div>
-  <a class="source" href="https://www.bloomberg.com/news/articles/2026-04-02/doj-to-appeal-court-order-halting-trump-s-ban-on-anthropic-ai" target="_blank">Bloomberg</a>
+  <h3>Q1 2026 벤처 투자 $3,000억 사상 최대 — AI가 $2,420억(80%) 독식 <span class="badge badge-new">NEW</span></h3>
+  <p>Crunchbase에 따르면 2026년 1분기 글로벌 벤처 투자가 $3,000억(약 420조원)을 기록하며 사상 최대치를 경신했습니다. AI 부문에만 $2,420억이 집중되어 전체의 80%를 차지합니다. 역대 최대 규모 라운드 5건 중 4건이 이번 분기에 성사되었고, OpenAI $1,220억, Anthropic $300억, xAI $200억, Waymo $160억을 기록했습니다. 미국 기업이 전체의 83%인 $2,500억을 확보했습니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — AI가 전체 VC의 80%를 흡수한다는 것은 AI 기능이 없는 제품/서비스의 투자 유치가 구조적으로 어려워지고 있음을 의미합니다. 제품 로드맵에 AI 기능이 없다면 지금이 추가할 시점입니다. 동시에, 1분기만으로 2025년 연간 투자의 70%에 달하는 버블 우려도 있으므로 ROI 기반의 현실적 AI 도입 전략이 필요합니다.</div>
+  <a class="source" href="https://news.crunchbase.com/venture/record-breaking-funding-ai-global-q1-2026/" target="_blank">Crunchbase News</a>
 </div>
 
 <div class="card">
-  <h3>미국인 과반(54%), AI가 해로울 것으로 우려 — Quinnipiac 여론조사</h3>
-  <p>Quinnipiac 여론조사에서 미국 성인의 54%가 AI가 해를 끼칠 가능성이 높다고 응답했습니다. AI 산업이 폭발적으로 성장하는 가운데 대중의 우려도 동시에 커지고 있으며, 이는 AI 규제 입법에 대한 정치적 동력이 될 수 있습니다.</p>
-  <a class="source" href="https://www.aiandnews.com/blog/latest-ai-news-public-concerns/" target="_blank">AI and News</a>
+  <h3>Anthropic MCP 9,700만 설치 돌파 — AI 에이전트 인프라의 사실상 표준 <span class="badge badge-new">NEW</span></h3>
+  <p>Anthropic의 Model Context Protocol(MCP)이 3월 25일 기준 9,700만 설치를 돌파했습니다. 2024년 11월 런칭 시 200만에서 16개월 만에 4,750% 성장한 수치입니다. OpenAI, Google DeepMind, Cohere, Mistral 모두 MCP 호환 도구를 기본 탑재했으며, 커뮤니티·엔터프라이즈 MCP 서버는 5,800개를 넘었습니다. 2025년 12월 Linux Foundation 산하 Agentic AI Foundation에 기증되어, AWS·Google·Microsoft·Cloudflare가 플래티넘 멤버로 참여합니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — MCP는 이제 "선택"이 아니라 "표준"입니다. 내부 도구와 API를 MCP 서버로 래핑하면 Claude Code, GPT, Gemini 등 어떤 AI 에이전트와도 즉시 통합됩니다. Spring Boot 기반으로 내부 API(재고 조회, 주문 상태, 배송 추적 등)를 MCP 서버로 노출하는 패턴을 표준 인프라로 검토할 시점입니다. Kotlin + Ktor/Spring MCP 서버 구현도 이미 커뮤니티에 등장했습니다.</div>
+  <a class="source" href="https://www.arturmarkus.com/anthropics-model-context-protocol-hits-97-million-installs-on-march-25-mcp-transitions-from-experimental-to-foundation-layer-for-agentic-ai/" target="_blank">AI Unfiltered</a>
 </div>
 
 <!-- ===================== 개발자 관련 ===================== -->
 <h2 class="section-title" id="dev">🛠️ 개발자</h2>
 
 <div class="card">
-  <h3>Stripe Minions — AI 코딩 에이전트가 주당 1,300 PR 배송, 인간 코드 0줄 <span class="badge badge-new">NEW</span> <span class="badge badge-hn">HN</span></h3>
-  <p>Stripe가 내부 AI 코딩 에이전트 "Minions"를 공개했습니다. 엔지니어가 Slack에서 메시지를 보내면, Minion이 자동으로 PR을 생성하여 테스트 통과 후 리뷰 대기 상태로 올립니다. 주당 1,300+ PR이 인간이 작성한 코드 없이 머지됩니다. 각 Minion은 "devbox"(Stripe 전체 소스트리가 로드된 EC2 인스턴스)에서 실행되며, 내부 MCP 서버 'Toolshed'를 통해 500개 도구에 접근합니다. Block의 오픈소스 Goose 에이전트를 무인 운영에 맞게 개조했습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Stripe의 핵심 아키텍처: (1) 워밍된 Bazel 캐시가 로드된 전용 devbox를 10초 내 프로비저닝, (2) 중앙 MCP 서버(Toolshed)로 500개 내부 도구 통합, (3) 모든 PR은 반드시 인간 리뷰 후 머지. 이 패턴을 Kotlin/Spring Boot 팀에 적용한다면: Gradle 빌드 캐시가 워밍된 표준 EC2 이미지 + 내부 API/DB 도구를 노출하는 MCP 서버 + Goose/Claude Code 기반 에이전트 조합을 고려해볼 수 있습니다.</div>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — "flaky 테스트 수정, 마이그레이션 적용, 명확한 스펙의 기능 구현" — 예측 가능하고 반복적인 개발 업무가 AI에 의해 자동화되고 있습니다. 개발 조직의 생산성 메트릭을 재정의할 시점입니다. 다만 "모든 PR은 인간이 리뷰"한다는 원칙은 유지됩니다.</div>
-  <a class="source" href="https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents" target="_blank">Stripe Dev Blog</a>
+  <h3>AWS Agent Plugin for Serverless — Claude Code/Kiro/Cursor에서 서버리스 개발 자동화 <span class="badge badge-new">NEW</span></h3>
+  <p>AWS가 AI 코딩 어시스턴트용 Agent Plugin for Serverless를 출시했습니다. Skills(구조화된 워크플로우), MCP 서버(라이브 데이터·API 연결), Hooks(자동화 트리거), References(문서·설정 참조)를 하나의 모듈러 유닛으로 패키징합니다. Claude Code에서 <code>/plugin install aws-serverless</code>로 설치하면, <code>sam_init</code>, <code>sam_build</code>, <code>sam_deploy</code>, <code>sam_local_invoke</code> 등을 구조화된 API로 호출할 수 있습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — "Skills + MCP + Hooks + References" 4계층 플러그인 아키텍처가 핵심입니다. 이 패턴을 참고하여 ECS Fargate 배포, MSK 토픽 관리, ElastiCache 운영 등을 위한 사내 에이전트 플러그인을 구성할 수 있습니다. AWS의 공식 MCP 서버(awslabs/mcp)도 오픈소스로 제공되니, IaC(CDK/CloudFormation) 자동화에 바로 활용 가능합니다.</div>
+  <a class="source" href="https://aws.amazon.com/about-aws/whats-new/2026/03/agent-plugin-aws-serverless/" target="_blank">AWS</a>
 </div>
 
 <div class="card">
-  <h3>SageMaker Studio, Kiro·Cursor IDE 지원 — 원격 IDE로 스케일러블 컴퓨팅 접근</h3>
-  <p>Amazon SageMaker Studio가 Kiro와 Cursor를 원격 IDE로 지원하기 시작했습니다. 기존 로컬 개발 환경(spec-driven 개발, 대화형 코딩 포함)을 유지하면서 SageMaker의 스케일러블 컴퓨팅 리소스에 접근할 수 있습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 코딩 어시스턴트(Kiro/Cursor)를 로컬이 아닌 SageMaker 원격 환경에서 실행하면, ML 모델 파인튜닝이나 대규모 데이터 전처리 작업에서 로컬 머신의 한계를 벗어날 수 있습니다. 특히 GPU가 필요한 AI 관련 개발에 유용합니다.</div>
-  <a class="source" href="https://aws.amazon.com/blogs/machine-learning/category/post-types/announcements/" target="_blank">AWS ML Blog</a>
+  <h3>Google DeepMind AlphaEvolve — LLM이 게임이론 알고리즘 재작성, 전문가 능가 <span class="badge badge-new">NEW</span></h3>
+  <p>Google DeepMind가 LLM 기반 진화 코딩 에이전트 AlphaEvolve를 발표했습니다. 수동 알고리즘 반복을 자동화 검색으로 대체하여, 기존 수작업으로 설계된 최신 알고리즘과 경쟁하거나 능가하는 새로운 변형을 자동 발견합니다. 게임이론 영역에서 LLM이 자체적으로 알고리즘을 재작성하고 전문가 기준을 넘어선 최초의 사례입니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — "알고리즘을 코딩하는 AI"에서 "알고리즘을 발명하는 AI"로의 전환입니다. 물류 경로 최적화, 창고 슬롯 배정, 피킹 순서 최적화 같은 조합 최적화 문제에서 LLM 기반 알고리즘 탐색이 기존 휴리스틱을 대체할 수 있는 가능성을 보여줍니다. 당장 적용보다는 벤치마크 영역에서의 진행 상황을 모니터링하세요.</div>
+  <a class="source" href="https://www.marktechpost.com/2026/04/03/google-deepminds-research-lets-an-llm-rewrite-its-own-game-theory-algorithms-and-it-outperformed-the-experts/" target="_blank">MarkTechPost</a>
 </div>
 
 <!-- ===================== 정책/규제 ===================== -->
 <h2 class="section-title" id="policy">📋 정책/규제</h2>
 
 <div class="card">
-  <h3>Anthropic vs 트럼프 행정부 — AI 안전 가드레일이 "처벌" 사유가 된 판례 <span class="badge badge-new">NEW</span></h3>
-  <p>Anthropic-국방부 분쟁의 핵심: AI 기업이 자사 기술의 윤리적 사용 조건(대규모 감시 금지, 자율 무기 제한)을 요구했더니 정부가 "공급망 위험"으로 지정했습니다. 법원은 이를 "처벌"로 판단했지만, 행정부는 항소합니다. 이 판례는 AI 기업의 안전 정책이 정부 계약에서 어떤 법적 지위를 갖는지를 결정하는 중요한 선례가 될 것입니다.</p>
-  <a class="source" href="https://www.washingtonpost.com/business/2026/04/02/ai-pentagon-anthropic-claude-hegseth-trump/012f64be-2eb3-11f1-aac2-f56b5ccad184_story.html" target="_blank">Washington Post</a>
+  <h3>California Newsom, AI 행정명령 서명 — 조달 가드레일·워터마킹 의무화 <span class="badge badge-new">NEW</span></h3>
+  <p>캘리포니아 주지사 Gavin Newsom이 3월 30일 AI 관련 행정명령에 서명했습니다. 주 정부와 계약하는 AI 기업에 오남용 방지 안전장치 공개, 아동 성착취·차별 방지 정책, AI 생성 콘텐츠 워터마킹 의무를 부과합니다. 또한 연방 정부가 특정 AI 기업을 "공급망 위험"으로 지정할 경우, 캘리포니아가 독자적으로 해당 지정을 검토하고 자체 결정을 내리겠다고 선언했습니다. 이는 트럼프 행정부의 연방 AI 규제 철회에 대한 직접적 대응입니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 캘리포니아는 미국 AI 산업의 중심지이므로, 이 행정명령은 사실상 업계 표준이 될 수 있습니다. AI 생성 콘텐츠 워터마킹 의무화는 EU AI Act의 방향성과도 일치합니다. 자사 AI 서비스에 콘텐츠 출처 표시(provenance) 기능을 미리 구현해두면 향후 규제 대응에 유리합니다.</div>
+  <a class="source" href="https://www.gov.ca.gov/2026/03/30/as-trump-rolls-back-protections-governor-newsom-signs-first-of-its-kind-executive-order-to-strengthen-ai-protections-and-responsible-use/" target="_blank">Governor of California</a>
+</div>
+
+<div class="card">
+  <h3>Georgia AI 법안 3건 주지사 서명 대기 — 챗봇 공시·보험 AI 결정 제한 <span class="badge badge-new">NEW</span></h3>
+  <p>조지아주 의회가 4월 6일 회기 종료를 앞두고 AI 관련 법안 3건을 주지사에게 전달했습니다. 챗봇 사용 시 AI임을 공시하는 법안, AI 연구위원회 설치 법안, 보험 결정을 AI 시스템에만 의존하는 것을 금지하는 법안이 포함되어 있습니다. 주 단위 AI 규제가 가속화되는 미국의 트렌드를 반영합니다.</p>
+  <a class="source" href="https://www.transparencycoalition.ai/news/ai-legislative-update-april3-2026" target="_blank">Transparency Coalition</a>
 </div>
 
 <!-- ===================== AI 보안 이슈 ===================== -->
 <h2 class="section-title" id="security">🔒 AI 보안 이슈</h2>
 
 <div class="card">
-  <h3>AI 에이전트 스킬 25% 이상 취약 — 30,000개 분석 결과 <span class="badge badge-security">HIGH</span> <span class="badge badge-new">NEW</span></h3>
-  <p>보안 연구자들이 30,000개 이상의 AI 에이전트 스킬을 분석한 결과, 4분의 1 이상(25%+)에서 최소 1개의 취약점이 발견되었습니다. 별도 조사에서는 83%의 조직이 에이전틱 AI를 업무에 배포할 계획이지만, 안전하게 운영할 준비가 되어있는 조직은 29%에 불과합니다. AI 에이전트의 도입 속도가 보안 준비를 크게 앞지르고 있습니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — "에이전트 스킬의 25%가 취약"이라는 수치는 서드파티 스킬/플러그인을 무비판적으로 사용하면 안 된다는 뜻입니다. AI 에이전트 도입 시: (1) 스킬은 내부 검증을 거친 것만 화이트리스트로 허용, (2) 서드파티 스킬의 네트워크·파일시스템 접근을 샌드박스로 격리, (3) 에이전트 실행 로그를 감사 추적(audit trail)으로 수집하세요.</div>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — "83%가 도입 계획, 29%만 보안 준비" — 이 격차가 AI 에이전트 시대의 핵심 리스크입니다. 에이전틱 AI 도입 로드맵에 보안 준비 단계를 반드시 포함하세요. "빨리 도입"보다 "안전하게 도입"이 장기적으로 비용을 절약합니다.</div>
-  <a class="source" href="https://adversa.ai/blog/top-agentic-ai-security-resources-april-2026/" target="_blank">Adversa AI</a>
+  <h3>Azure AI Foundry CVE-2026-32213 — CVSS 10 만점, 인증 없이 권한 상승 <span class="badge badge-security">CVSS 10</span> <span class="badge badge-new">NEW</span></h3>
+  <p>4월 3일 공개된 Azure AI Foundry의 부적절한 인가 취약점(CVE-2026-32213)은 CVSS 만점(10)을 기록했습니다. 인증되지 않은 공격자가 네트워크를 통해 권한을 상승시킬 수 있으며, 사전 인증이 필요 없어 공격 난이도가 매우 낮습니다. 같은 주 Microsoft는 Azure MCP 서버 인증 결함(CVE-2026-32211, CVSS 9.1)도 패치했습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 인프라 플랫폼에서 CVSS 10이 나왔습니다. Azure AI Foundry를 사용 중이라면 즉시 패치를 적용하세요. AWS 사용자도 타산지석으로 삼아야 합니다: SageMaker, Bedrock 등 AI 서비스의 IAM 정책을 최소 권한 원칙으로 재검토하고, VPC 엔드포인트로 네트워크 접근을 제한하세요. AI 서비스의 인가 체계가 전통적인 서비스보다 느슨한 경우가 많습니다.</div>
+  <a class="source" href="https://www.thehackerwire.com/azure-ai-foundry-critical-privilege-escalation-cve-2026-32213/" target="_blank">TheHackerWire</a>
 </div>
 
 <div class="card">
-  <h3>LangChain 3개 취약점 — 파일·환경변수·대화 이력 노출 <span class="badge badge-security">SECURITY</span></h3>
-  <p>LangChain과 LangGraph에서 3개 보안 취약점이 발견되었습니다. 각각 다른 클래스의 엔터프라이즈 데이터를 노출합니다: 파일시스템 파일, 환경 변수(시크릿), 대화 히스토리. 수백만 건의 LLM 앱 배포에 영향을 미칩니다.</p>
-  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — LangChain을 사용 중이라면 즉시 패치 버전을 확인하세요. 환경 변수 노출 취약점은 AWS 크리덴셜, DB 비밀번호 등이 유출될 수 있음을 의미합니다. LangChain 앱을 ECS에서 운영한다면, Task Role의 권한을 최소한으로 제한하고, 환경 변수 대신 Secrets Manager 참조를 사용하세요.</div>
-  <a class="source" href="https://thehackernews.com/2026/03/langchain-langgraph-flaws-expose-files.html" target="_blank">The Hacker News</a>
+  <h3>CrewAI 4개 CVE — 프롬프트 인젝션에서 RCE·SSRF·파일 읽기까지 체인 공격 <span class="badge badge-security">HIGH</span> <span class="badge badge-new">NEW</span></h3>
+  <p>AI 에이전트 프레임워크 CrewAI에서 4개의 CVE가 공개되었습니다. Code Interpreter Tool이 Docker 미사용 시 SandboxPython으로 폴백하면서 RCE로 이어지는 취약점(CVE-2026-2275, CVE-2026-2287), RAG 검색 도구의 URL 미검증으로 인한 SSRF(CVE-2026-2286), JSON 로더의 경로 검증 미비로 인한 파일 읽기(CVE-2026-2285)가 포함됩니다. 공격자가 프롬프트 인젝션으로 에이전트를 하이재킹한 후 이 취약점들을 체인하면 호스트를 완전히 장악할 수 있습니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — AI 에이전트 프레임워크의 "샌드박스"를 맹신하지 마세요. CrewAI의 핵심 문제: Docker가 없으면 무방비 상태가 됩니다. AI 에이전트를 프로덕션에 배포할 때 (1) Docker 기반 격리를 필수로 강제하고, (2) 에이전트가 접근할 수 있는 네트워크·파일시스템을 화이트리스트로 제한하고, (3) 사용자 입력이 에이전트 프롬프트에 직접 주입되지 않도록 입력 필터링을 적용하세요.</div>
+  <a class="source" href="https://kb.cert.org/vuls/id/221883" target="_blank">CERT/CC</a>
+</div>
+
+<div class="card">
+  <h3>Bruce Schneier "인스턴트 소프트웨어 시대의 사이버보안" — AI 코드의 보안 딜레마 <span class="badge badge-new">NEW</span></h3>
+  <p>보안 전문가 Bruce Schneier가 4월 4일 에세이에서 AI가 "인스턴트 소프트웨어"를 만드는 시대의 보안 문제를 분석했습니다. AI가 생성하는 코드는 취약점으로 가득하지만, 동시에 AI의 취약점 발견 능력은 방어 측에 더 유리합니다 — 방어자가 취약점을 발견하면 즉시 패치하여 공격자에게 영원히 차단할 수 있기 때문입니다. 핵심 경고: "AI가 만든 코드를 사용하는 사람들이 보안을 이해하지 못한다"는 것이 가장 큰 위험입니다.</p>
+  <div class="highlight-dev">💡 <strong>백엔드 개발자 포인트</strong> — Schneier의 핵심 통찰: AI 코드 생성 속도가 빨라질수록 SAST/DAST 자동화가 더 중요해집니다. CI/CD 파이프라인에 보안 스캔을 필수 게이트로 설정하고, AI가 생성한 코드에 대해서는 인간이 작성한 코드보다 더 엄격한 리뷰 기준을 적용하세요. "AI가 만들었으니 괜찮겠지"가 아니라 "AI가 만들었으니 더 의심하라"가 올바른 자세입니다.</div>
+  <a class="source" href="https://www.schneier.com/essays/archives/2026/04/cybersecurity-in-the-age-of-instant-software.html" target="_blank">Schneier on Security</a>
 </div>
 
 <!-- ===================== 국내 소식 ===================== -->
 <h2 class="section-title" id="kr">🇰🇷 국내 소식</h2>
 
 <div class="card">
-  <h3>정부, 2028년까지 첨단 GPU 5.2만장+ 확보 — 슈퍼컴 6호기·국가AI컴퓨팅센터 구축 <span class="badge badge-new">NEW</span></h3>
-  <p>한국 정부가 AI 3대 강국 도약을 위해 2028년까지 5만 2,000장 이상의 첨단 GPU를 확보하고, 슈퍼컴퓨터 6호기와 국가AI컴퓨팅센터를 구축합니다. AI 컴퓨팅 인프라를 "AI 고속도로"로 정의하고, 민간·공공 모두 접근 가능한 국가 AI 인프라를 조성할 계획입니다.</p>
-  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 국가 AI 컴퓨팅 자원이 민간에도 개방되면, 스타트업과 중소기업의 AI 모델 학습·추론 비용 장벽이 낮아집니다. 물류/WMS AI 솔루션 개발 시 국가 AI 컴퓨팅센터의 GPU 자원을 활용하는 방안을 검토하세요. 특히 수요 예측·경로 최적화 같은 GPU 집약적 작업에 유리합니다.</div>
-  <a class="source" href="https://www.korea.kr/news/policyNewsView.do?newsId=148957796" target="_blank">대한민국 정책브리핑</a>
+  <h3>AI 프라이버시 민·관 정책협의회 출범 — 생성형 AI 시대 개인정보 보호 체계 구축 <span class="badge badge-new">NEW</span></h3>
+  <p>개인정보보호위원회가 '2026 인공지능(AI) 프라이버시 민·관 정책협의회'를 출범시켰습니다. xAI의 Grok 등 생성형 AI로 인한 딥페이크, 동의 없는 성적 이미지 생성 확산에 대응하기 위해 52개국 61개 개인정보 감독기구가 참여하는 글로벌 공동선언에도 참여했습니다. 선언문은 AI 오남용 방지 안전조치, 투명성 확보, 신속한 삭제 구제절차, 아동·청소년 강화 보호조치 등 4대 원칙을 담고 있습니다.</p>
+  <div class="highlight-pm">📊 <strong>기획자 포인트</strong> — 한국 개인정보위가 글로벌 AI 프라이버시 공동선언에 참여한 것은 국내 AI 서비스에도 동일한 기준이 적용될 것임을 시사합니다. 생성형 AI 기능이 포함된 서비스라면, 콘텐츠 생성 가이드라인과 삭제 요청 처리 프로세스를 미리 마련해두세요.</div>
+  <a class="source" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156742576" target="_blank">대한민국 정책브리핑</a>
 </div>
 
 <div class="card">
-  <h3>한국연구재단 'NRF 인공지능 위원회' 구성 — 연구관리 AI 전환 추진</h3>
-  <p>한국연구재단이 전사적 AI 전환과 연구관리 혁신을 위한 'NRF 인공지능 위원회'를 구성하고 첫 회의를 개최했습니다. AI를 연구관리 전 과정에 도입하여 연구 평가, 과제 관리, 성과 분석 등을 혁신할 계획입니다.</p>
-  <a class="source" href="https://www.aitimes.kr" target="_blank">인공지능신문</a>
+  <h3>보건복지부, AI 신약개발 인재 양성 — 국내 최초 SDL 실습 교육 도입 <span class="badge badge-new">NEW</span></h3>
+  <p>보건복지부와 한국보건산업진흥원이 AI 기반 신약 개발 전문 인력 양성을 위해 4월부터 교육 사업을 시작합니다. 국내 최초로 자율실험화(Self-Driving Lab, SDL) 실습 교육을 도입하여, AI와 로봇이 24시간 자율적으로 실험하는 신약개발 패러다임 전환을 가속화합니다. LAIDD 플랫폼을 통해 온라인 교육과 실습이 제공됩니다.</p>
+  <a class="source" href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156744622" target="_blank">대한민국 정책브리핑</a>
 </div>
 
 <div class="card">
-  <h3>K-콘텐츠 AI 인재양성 로드맵 공개 — AI 창작부터 장르 전문성까지</h3>
-  <p>한국콘텐츠진흥원이 2026년 K-콘텐츠 인재양성 로드맵을 공개했습니다. AI 창작 도구 활용부터 장르별 전문성 강화까지 포괄하며, AI 게임콘텐츠 제작지원은 과제당 최대 3억원 규모로 9개 내외를 선정합니다.</p>
-  <a class="source" href="https://www.hellot.net/news/article.html?no=109160" target="_blank">HelloT</a>
+  <h3>서울시-ETRI AI 반도체 인재양성 성과 가시화 — 취업·기업 성장 동시 견인</h3>
+  <p>서울시와 ETRI가 협력하여 추진한 AI 반도체 인재 양성 사업의 성과가 가시화되고 있습니다. 교육 이수자의 취업률 향상과 참여 기업의 성장이 동시에 확인되며, 산학 연계 AI 인재 양성 모델의 효과를 입증하고 있습니다.</p>
+  <a class="source" href="https://news.seoul.go.kr/economy/archives/571044" target="_blank">서울특별시</a>
 </div>
 
 <!-- ===================== 오늘의 주목 포인트 ===================== -->
 <h2 class="section-title">🎯 오늘의 주목 포인트</h2>
 
 <div class="spotlight">
-  <span class="num">1</span><h3>Stripe Minions — AI 코딩 에이전트의 프로덕션 레퍼런스 아키텍처</h3>
-  <p>주당 1,300 PR, 인간 코드 0줄. Stripe가 보여준 것은 "AI가 코딩할 수 있느냐"가 아니라 "어떻게 안전하게 프로덕션에 통합하느냐"의 답입니다. 워밍된 devbox + 중앙 MCP 서버(500개 도구) + 인간 리뷰 필수 — 이 3가지 원칙은 AI 코딩 에이전트를 도입하려는 모든 팀의 레퍼런스가 될 것입니다.</p>
+  <span class="num">1</span><h3>Google Gemma 4 Apache 2.0 — 오픈 모델 생태계의 게임 체인저</h3>
+  <p>Google이 Gemma 시리즈 최초로 Apache 2.0 라이선스를 적용했습니다. 31B 모델이 자신보다 20배 큰 모델을 이기는 성능에 법적 리스크 제로. 중국 오픈소스(Qwen, DeepSeek)와의 경쟁이 기업용 무료 AI의 품질을 끌어올리고 있습니다. "AI 기능 = 유료 API 구독"이라는 공식이 무너지는 시작점입니다.</p>
 </div>
 
 <div class="spotlight">
-  <span class="num">2</span><h3>Claude Mythos 유출 — "전례 없는 사이버보안 위험"의 의미</h3>
-  <p>Anthropic 스스로가 자사 모델에 "전례 없는 사이버보안 위험"이라는 딱지를 붙이고 정부에 비공개 경고를 보냈습니다. CMS 설정 오류로 유출된 이 정보는, AI 모델의 능력이 방어보다 공격에 유리한 비대칭 구간에 진입했을 수 있음을 시사합니다. AI 보안 팀에게는 가장 경계해야 할 신호입니다.</p>
+  <span class="num">2</span><h3>Azure AI Foundry CVSS 10 — AI 인프라 보안의 사각지대</h3>
+  <p>AI 인프라 플랫폼에서 CVSS 만점 취약점이 나왔습니다. 인증 없이 권한 상승이 가능하다는 것은 AI 서비스의 인가 체계가 전통적인 클라우드 서비스보다 미성숙하다는 증거입니다. CrewAI의 샌드박스 탈출, OpenClaw의 9개 CVE 폭탄까지 — AI 에이전트 시대의 보안 부채가 빠르게 쌓이고 있습니다.</p>
 </div>
 
 <div class="spotlight">
-  <span class="num">3</span><h3>Anthropic vs 미국 정부 — AI 윤리가 법정에 서다</h3>
-  <p>"대규모 감시 금지" 조건을 걸었다가 정부에 의해 "공급망 위험"으로 지정된 Anthropic. 판사는 "처벌"이라 했지만 DOJ는 항소합니다. AI 기업의 안전 가드레일이 정부 계약에서 갖는 법적 지위를 결정할 이 판례는, AI 산업 전체의 정부 관계에 영향을 미칠 것입니다.</p>
+  <span class="num">3</span><h3>Q1 $3,000억 — AI 투자가 벤처 시장을 집어삼키다</h3>
+  <p>1분기만으로 2025년 연간 투자의 70%, AI가 전체의 80%. OpenAI 한 곳이 $1,220억을 가져갔습니다. 이 숫자가 의미하는 것: AI가 아닌 스타트업은 구조적으로 자금 조달이 어려워지고 있으며, AI 기능은 더 이상 "있으면 좋은 것"이 아니라 "없으면 투자받기 어려운 것"이 되었습니다.</p>
 </div>
 
 <footer>
